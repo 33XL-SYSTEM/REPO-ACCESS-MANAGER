@@ -132,8 +132,8 @@ O R.A.M é open-source. Para clonar esta instância de terminal na sua máquina 
 ### Setup
 1. **Clone o repositório principal:**
    \`\`\`bash
-   git clone https://github.com/Cauan33XL/REPO-ACESS-MANAGER.git
-   cd REPO-ACESS-MANAGER
+   git clone https://github.com/Cauan33XL/REPO-ACCESS-MANAGER.git
+   cd REPO-ACCESS-MANAGER
    \`\`\`
 
 2. **Instale as dependências da pipeline:**

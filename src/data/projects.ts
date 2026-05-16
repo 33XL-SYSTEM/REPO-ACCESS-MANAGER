@@ -32,7 +32,7 @@ O Repo Access Manager é o núcleo central de acesso à documentação e reposit
 Foi criado para centralizar e indexar tanto projetos públicos quanto privados, fornecendo uma visão geral técnica e de design (com estética retro-punk e glassmorphism).
     `,
     tags: ['React', 'TypeScript', 'Tailwind', 'Vite'],
-    githubUrl: 'https://github.com/Cauan33XL/REPO-ACESS-MANAGER',
+    githubUrl: 'https://github.com/Cauan33XL/REPO-ACCESS-MANAGER',
     isPrivate: false,
     category: 'R.A.M',
     status: 'active'
