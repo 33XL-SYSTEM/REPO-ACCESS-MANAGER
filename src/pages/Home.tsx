@@ -5,6 +5,7 @@ import { projects } from '../data/projects';
 import type { Project } from '../data/projects';
 
 import VinylSpinner from '../components/VinylSpinner';
+import MusicPlayer from '../components/MusicPlayer';
 
 const Home: React.FC = () => {
   const [filter, setFilter] = useState<Project['category'] | 'ALL'>('ALL');
@@ -42,9 +43,12 @@ const Home: React.FC = () => {
               <span className="text-outline-white">R.A.M</span>
             </h1>
             
-            {/* Conceptual Vinyl Spinner - Absolutely Positioned */}
-            <div className="hidden md:block absolute -top-16 right-0 z-0">
+            {/* Conceptual Vinyl Spinner & Player - Absolutely Positioned */}
+            <div className="hidden md:flex flex-col items-center absolute -top-16 right-0 z-0 w-[450px]">
               <VinylSpinner />
+              <div className="mt-12 z-10 w-full max-w-[400px] animate-fade-in drop-shadow-2xl">
+                <MusicPlayer />
+              </div>
             </div>
           </div>
           
@@ -64,11 +68,9 @@ const Home: React.FC = () => {
                   Explorar Repos
                 </a>
               </div>
-            </div>
-            
-            <div className="hidden md:flex flex-col items-end pt-32">
+              
               {/* Terminal Specs */}
-              <div className="flex flex-col gap-2 text-right font-mono text-[10px] text-white/30 uppercase tracking-[0.2em]">
+              <div className="flex flex-wrap gap-6 mt-12 font-mono text-[10px] text-white/30 uppercase tracking-[0.2em] border-t border-white/10 pt-6">
                 <span>[ CPU_LOAD: 42% ]</span>
                 <span>[ MEMORY_STATUS: STABLE ]</span>
                 <span>[ CONNECTION: ENCRYPTED ]</span>

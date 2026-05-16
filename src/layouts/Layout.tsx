@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import FloatingPlayer from '../components/FloatingPlayer';
 
 const Layout: React.FC = () => {
   return (
@@ -31,6 +32,8 @@ const Layout: React.FC = () => {
           <a href="mailto:cauan33xl@proton.me" className="hover:text-white transition-colors">Email</a>
         </div>
       </footer>
+      
+      <FloatingPlayer />
     </div>
   );
 };

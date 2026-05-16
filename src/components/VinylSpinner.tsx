@@ -1,6 +1,9 @@
 import React from 'react';
+import { useMusic } from '../context/MusicContext';
 
 const VinylSpinner: React.FC = () => {
+  const { isPlaying } = useMusic();
+  
   const orbitItems = [
     "SECURE-FLAG",
     "HYDROPUSH",
@@ -17,7 +20,10 @@ const VinylSpinner: React.FC = () => {
       <div className="absolute w-[350px] h-[350px] bg-white/5 blur-3xl rounded-full mix-blend-screen"></div>
 
       {/* Main Vinyl Disc - Spinning */}
-      <div className="absolute w-[340px] h-[340px] rounded-full border border-white/20 animate-[spin_12s_linear_infinite] flex items-center justify-center bg-gradient-to-br from-[#111] to-[#050505] shadow-[0_0_60px_rgba(255,255,255,0.05),inset_0_0_25px_rgba(255,255,255,0.05)]">
+      <div 
+        className="absolute w-[340px] h-[340px] rounded-full border border-white/20 animate-[spin_12s_linear_infinite] flex items-center justify-center bg-gradient-to-br from-[#111] to-[#050505] shadow-[0_0_60px_rgba(255,255,255,0.05),inset_0_0_25px_rgba(255,255,255,0.05)]"
+        style={{ animationPlayState: isPlaying ? 'running' : 'paused' }}
+      >
         {/* Vinyl Grooves */}
         <div className="absolute w-[300px] h-[300px] rounded-full border border-white/10 border-dashed opacity-50"></div>
         <div className="absolute w-[260px] h-[260px] rounded-full border border-white/5"></div>
@@ -32,7 +38,10 @@ const VinylSpinner: React.FC = () => {
       </div>
 
       {/* Orbiting Tracks */}
-      <div className="absolute inset-0 animate-[spin_25s_linear_infinite]">
+      <div 
+        className="absolute inset-0 animate-[spin_25s_linear_infinite]"
+        style={{ animationPlayState: isPlaying ? 'running' : 'paused' }}
+      >
         {orbitItems.map((item, i) => {
           const rotation = (360 / orbitItems.length) * i;
           return (

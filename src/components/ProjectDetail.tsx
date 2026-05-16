@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import ReactMarkdown from 'react-markdown';
-import { GitBranch, ExternalLink, ArrowLeft } from 'lucide-react';
+import { GitBranch, ExternalLink, ArrowLeft, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import type { Project } from '../data/projects';
 
 interface ProjectDetailProps {
@@ -9,6 +10,32 @@ interface ProjectDetailProps {
 }
 
 const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const handleNext = React.useCallback(() => {
+    if (project.gallery && lightboxIndex !== null) {
+      setLightboxIndex((lightboxIndex + 1) % project.gallery.length);
+    }
+  }, [project.gallery, lightboxIndex]);
+
+  const handlePrev = React.useCallback(() => {
+    if (project.gallery && lightboxIndex !== null) {
+      setLightboxIndex((lightboxIndex - 1 + project.gallery.length) % project.gallery.length);
+    }
+  }, [project.gallery, lightboxIndex]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightboxIndex(null);
+      if (e.key === 'ArrowRight') handleNext();
+      if (e.key === 'ArrowLeft') handlePrev();
+    };
+    if (lightboxIndex !== null) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxIndex, handleNext, handlePrev]);
+
   return (
     <div className="fixed inset-0 z-50 bg-brand-black/95 backdrop-blur-xl overflow-y-auto">
       <div className="scanline"></div>
@@ -73,6 +100,28 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
             )}
           </div>
           
+          {project.gallery && project.gallery.length > 0 && (
+            <div className="border-t border-white/10 pt-8 mt-8">
+              <h3 className="font-mono uppercase tracking-widest text-sm text-white/50 mb-6">Galeria / Visuals</h3>
+              <div className="flex flex-col gap-8">
+                {project.gallery.map((imgSrc, idx) => (
+                  <div 
+                    key={idx} 
+                    className="relative group overflow-hidden border border-white/10 bg-white/5 rounded-sm cursor-pointer"
+                    onClick={() => setLightboxIndex(idx)}
+                  >
+                    <img 
+                      src={imgSrc} 
+                      alt={`${project.name} asset ${idx + 1}`} 
+                      className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500" 
+                      loading="lazy" 
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           <div className="border-t border-white/10 pt-8 mt-8">
             <h3 className="font-mono uppercase tracking-widest text-sm text-white/50 mb-4">Stack & Tags</h3>
             <div className="flex flex-wrap gap-3">
@@ -85,6 +134,47 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
           </div>
         </div>
       </div>
+
+      {/* Lightbox Modal via Portal para ignorar restrições de z-index/overflow */}
+      {lightboxIndex !== null && project.gallery && createPortal(
+        <div 
+          className="fixed inset-0 z-[9999] bg-brand-black/95 backdrop-blur-2xl flex items-center justify-center p-4 transition-all"
+          onClick={() => setLightboxIndex(null)}
+        >
+          <button 
+            onClick={(e) => { e.stopPropagation(); setLightboxIndex(null); }}
+            className="fixed top-6 right-6 md:top-8 md:right-8 p-2 text-white/50 hover:text-white hover:bg-white/10 rounded-full transition-all z-[10000]"
+          >
+            <X size={32} />
+          </button>
+          
+          <button 
+            onClick={(e) => { e.stopPropagation(); handlePrev(); }}
+            className="fixed left-2 md:left-8 p-2 text-white/50 hover:text-white hover:bg-white/10 rounded-full transition-all z-[10000]"
+          >
+            <ChevronLeft size={48} />
+          </button>
+          
+          <img 
+            src={project.gallery[lightboxIndex]} 
+            alt="Expanded view" 
+            className="max-w-[95vw] max-h-[90vh] object-contain shadow-2xl relative z-[9999]"
+            onClick={(e) => e.stopPropagation()}
+          />
+          
+          <button 
+            onClick={(e) => { e.stopPropagation(); handleNext(); }}
+            className="fixed right-2 md:right-8 p-2 text-white/50 hover:text-white hover:bg-white/10 rounded-full transition-all z-[10000]"
+          >
+            <ChevronRight size={48} />
+          </button>
+          
+          <div className="fixed bottom-6 font-mono text-xs tracking-widest text-white/50 z-[10000]">
+            {lightboxIndex + 1} / {project.gallery.length}
+          </div>
+        </div>,
+        document.body
+      )}
     </div>
   );
 };

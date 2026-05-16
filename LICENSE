@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 Coelho Branco
+Copyright (c) 2026 cauan33xl
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,26 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+--------------------------------------------------------------------------------
+
+EXCEPTIONS / ASSET LICENSES
+
+The MIT license above applies to the source code of this repository. However, 
+the following directories contain media and visual assets that are subject to 
+their own, more restrictive licenses:
+
+1. MUSICS (`public/musics/`)
+   - License: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0)
+   - Summary: Allows usage for creative purposes and as assets in other projects, 
+     but commercial use is STRICTLY PROHIBITED (you cannot profit from these musics).
+   - Please see the `public/musics/LICENSE` file for the full terms.
+
+2. VISUAL ASSETS AND SCREENSHOTS (`public/assets/`)
+   - License: Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 (CC BY-NC-ND 4.0)
+   - Summary: These assets are screenshots and visual representations of the 
+     creator's original projects. Sharing them for disclosure, review, or 
+     demonstration purposes is encouraged. However, any appropriation, modification 
+     ("remixing"), or use that represents these assets as your own or third-party 
+     projects is STRICTLY PROHIBITED.
+   - Please see the `public/assets/LICENSE` file for the full terms.

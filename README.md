@@ -166,20 +166,39 @@ A estrutura do Repo Access Manager foi desenhada para ser escalável. As próxim
 
 ---
 
-## 9. AUTOR E LICENÇA
+## 9. AUTOR E LICENÇA / AUTHOR & LICENSE
 
 Projetado, codificado e mantido por **CAUAN33XL**.
 
 - **GitHub:** [https://github.com/Cauan33XL](https://github.com/Cauan33XL)
 
-### Licença (MIT)
+### Licença Principal e Exceções (PT-BR)
 
-Este projeto é distribuído sob a licença MIT. 
+Este projeto é primariamente distribuído sob a **licença MIT**.
 O código-fonte base, a arquitetura React e as lógicas de filtro e UI são abertos e livres para cópia, modificação e uso (inclusive comercial), desde que seja dada a devida atribuição.
 
 ⚠️ **Aviso sobre Propriedade e Licenças dos Projetos Indexados:**
 Apesar do código-fonte do *container* (este site/portfólio) ser distribuído sob a licença MIT, os repositórios e softwares listados dentro dele (ex: Hydropush, Trymon OS, Lepus Fight, etc.) **possuem licenças próprias e individuais (como GPLv3, MIT, entre outras).**
-Você é livre para utilizar a estrutura gráfica e arquitetural deste site como template para o seu próprio portfólio. No entanto, é terminantemente proibido clonar ou assumir autoria dos dados pessoais, narrativas e descrições documentadas em `src/data/projects.ts`. Consulte o repositório oficial de cada software listado para verificar os termos de uso e a licença de distribuição aplicáveis a ele.
+Você é livre para utilizar a estrutura gráfica e arquitetural deste site como template para o seu próprio portfólio. No entanto, é terminantemente proibido clonar ou assumir autoria dos dados pessoais, narrativas e descrições documentadas em `src/data/projects.ts`. Consulte o repositório oficial de cada software listado para verificar as licenças aplicáveis.
+
+⛔ **Licenças Específicas para Assets e Músicas:**
+- **Músicas (`public/musics/`):** Licenciadas sob **CC BY-NC 4.0** (Creative Commons Atribuição-NãoComercial). Uso criativo é permitido, mas o **uso comercial e monetização são estritamente proibidos**.
+- **Assets e Prints (`public/assets/`):** Licenciados sob **CC BY-NC-ND 4.0** (Atribuição-NãoComercial-SemDerivações). Permitida a divulgação/review, mas é **terminantemente proibida a apropriação, modificação ("remix")** ou uso que represente essas imagens como projetos de autoria própria ou de terceiros.
+
+<br>
+
+### Main License and Exceptions (EN)
+
+This project is primarily distributed under the **MIT License**.
+The base source code, React architecture, filter logic, and UI are open and free for copying, modification, and use (including commercial), provided proper attribution is given.
+
+⚠️ **Notice on Ownership and Licenses of Indexed Projects:**
+Although the source code of the *container* (this website/portfolio) is MIT-licensed, the repositories and software listed inside it (e.g., Hydropush, Trymon OS, Lepus Fight) **have their own individual licenses (such as GPLv3, MIT, etc.).**
+You are free to use the graphical and architectural structure of this site as a template for your own portfolio. However, it is strictly prohibited to clone or claim authorship of the personal data, narratives, and descriptions documented in `src/data/projects.ts`. Please check the official repository of each listed software for its applicable license.
+
+⛔ **Specific Licenses for Assets and Music:**
+- **Musics (`public/musics/`):** Licensed under **CC BY-NC 4.0** (Creative Commons Attribution-NonCommercial). Creative usage is allowed, but **commercial use and monetization are strictly prohibited**.
+- **Assets and Screenshots (`public/assets/`):** Licensed under **CC BY-NC-ND 4.0** (Attribution-NonCommercial-NoDerivatives). Sharing for demonstration and review purposes is permitted, but **appropriation, modification ("remixing"), or using these images** to represent them as your own or third-party projects is strictly prohibited.
 
 ---
 *Terminal Instance: R.A.M / End of File.*

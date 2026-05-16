@@ -17,6 +17,7 @@ export interface Project {
   isPrivate: boolean;
   category: ProjectCategory;
   status: 'active' | 'archived' | 'in-progress';
+  gallery?: string[];
 }
 
 export const projects: Project[] = [
@@ -64,7 +65,17 @@ Desenvolvido para o Centro Universitário do Planalto Central (UNICEPLAC).
     demoUrl: 'https://secure-flag-projeto-ctf.vercel.app/',
     isPrivate: false,
     category: 'ACADÊMICOS',
-    status: 'active'
+    status: 'active',
+    gallery: [
+      '/assets/secure-flag-ctf/01.png',
+      '/assets/secure-flag-ctf/02.png',
+      '/assets/secure-flag-ctf/03.png',
+      '/assets/secure-flag-ctf/04.png',
+      '/assets/secure-flag-ctf/05.png',
+      '/assets/secure-flag-ctf/06.png',
+      '/assets/secure-flag-ctf/07.png',
+      '/assets/secure-flag-ctf/08.png'
+    ]
   },
   {
     id: 'hydropush',
@@ -214,7 +225,19 @@ TVM is the core virtualization layer that makes the TVM concept work. It is a by
     demoUrl: 'https://trymon-os.vercel.app/',
     isPrivate: false,
     category: 'A.L.T',
-    status: 'active'
+    status: 'active',
+    gallery: [
+      '/assets/trymon/01.png',
+      '/assets/trymon/02.png',
+      '/assets/trymon/03.png',
+      '/assets/trymon/04.png',
+      '/assets/trymon/05.png',
+      '/assets/trymon/06.png',
+      '/assets/trymon/07.png',
+      '/assets/trymon/08.png',
+      '/assets/trymon/09.png',
+      '/assets/trymon/10.png'
+    ]
   },
 
   // CATEGORIA JOGOS
