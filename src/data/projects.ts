@@ -48,7 +48,7 @@ export const projects: Project[] = [
   // Projetos Academicos Herdados
   {
     id: 'secure-flag',
-    name: 'SECURE-FLAG-CTF',
+    name: 'SECURE FLAG CTF',
     description: 'Plataforma de Capture The Flag focada em segurança da informação.',
     fullDescription: secureFlagDescription,
     tags: ['Security', 'Web', 'Challenge'],
@@ -70,7 +70,7 @@ export const projects: Project[] = [
   },
   {
     id: 'hydropush',
-    name: 'HYDROPUSH-APP',
+    name: 'HYDROPUSH APP',
     description: 'Aplicativo de monitoramento e incentivo à hidratação.',
     fullDescription: hydropushDescription,
     tags: ['React Native', 'Capacitor', 'Firebase'],
@@ -82,7 +82,7 @@ export const projects: Project[] = [
   },
   {
     id: 'banco-sic-mundus',
-    name: 'BANCO-SIC-MUNDUS',
+    name: 'BANCO SIC MUNDUS',
     description: 'Simulador bancário retro-futurístico e imersivo em C + WebAssembly + React 19, inspirado na série Dark.',
     fullDescription: bancoSicMundusDescription,
     tags: ['C', 'WASM', 'React', 'TypeScript'],
@@ -96,7 +96,7 @@ export const projects: Project[] = [
   // CATEGORIA A.L.T
   {
     id: 'amond-3d',
-    name: 'Amond 3D',
+    name: 'Amond 3D Engine',
     description: 'Visualizador e plataforma de modelos 3D.',
     fullDescription: amond3dDescription,
     tags: ['3D', 'Three.js', 'WebGL', 'TypeScript'],
@@ -107,7 +107,7 @@ export const projects: Project[] = [
   },
   {
     id: 'lepus-fight',
-    name: 'Lepus Fight TS',
+    name: 'Lepus Fight Engine',
     description: 'Jogo de luta desenvolvido com TypeScript.',
     fullDescription: lepusFightDescription,
     tags: ['Game', 'TypeScript', 'Phaser', 'Engine'],
@@ -119,7 +119,7 @@ export const projects: Project[] = [
   },
   {
     id: 'trymon-os',
-    name: 'TRYMON-OS',
+    name: 'TRYMON OS',
     description: 'Sistema operacional experimental baseado em web com interface moderna.',
     fullDescription: trymonOsDescription,
     tags: ['Next.js', 'TypeScript', 'Tailwind', 'Rust', 'WASM'],
