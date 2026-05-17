@@ -25,6 +25,15 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
   }, [project.gallery, lightboxIndex]);
 
   useEffect(() => {
+    // Disable background page scrolling when project details overlay is active
+    document.body.style.overflow = 'hidden';
+    return () => {
+      // Restore scroll when unmounted
+      document.body.style.overflow = '';
+    };
+  }, []);
+
+  useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setLightboxIndex(null);
       if (e.key === 'ArrowRight') handleNext();
@@ -37,7 +46,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
   }, [lightboxIndex, handleNext, handlePrev]);
 
   return (
-    <div className="fixed inset-0 z-50 bg-brand-black/95 backdrop-blur-xl overflow-y-auto">
+    <div className="fixed inset-0 z-50 bg-brand-black/95 backdrop-blur-xl overflow-y-auto overscroll-contain">
       <div className="scanline"></div>
       
       <div className="max-w-4xl mx-auto px-6 py-20 relative">
