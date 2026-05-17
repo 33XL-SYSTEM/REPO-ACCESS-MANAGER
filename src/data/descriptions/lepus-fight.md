@@ -1,0 +1,18 @@
+# ⚔️ Lepus Fight Engine – Arquitetura de Jogo de Luta Nativa em Phaser
+
+[![Status da Engine](https://img.shields.io/badge/Status-Beta_2.1-blueviolet?style=for-the-badge)](https://github.com/Cauan33XL/LEPUS-FIGHT-ENGINE)
+[![Licença](https://img.shields.io/badge/Licença-GPL_v3-green?style=for-the-badge)](LICENSE)
+[![Build](https://img.shields.io/badge/Build-TypeScript-informational?style=for-the-badge)](https://www.typescriptlang.org/)
+[![Plataforma](https://img.shields.io/badge/Plataforma-Web_Nativa-orange?style=for-the-badge)](https://phaser.io/)
+
+O **Lepus Fight Engine** é um motor de jogo de luta 2D de alta performance, projetado inteiramente a partir do zero sob a filosofia de execução web-nativa. Escrito em **TypeScript** e renderizado pelo motor gráfico acelerado por hardware **Phaser 3**, o Lepus revoluciona o desenvolvimento de jogos de luta para navegadores. Inspirado na nostalgia e flexibilidade clássica do **MUGEN** e **Ikemen GO**, ele transcende a emulação ao traduzir dados brutos e lógica legada em código compilado reativo de ultra-baixa latência.
+
+A arquitetura do motor assenta no princípio da **Soberania Modular**, orquestrada por meio de três frentes desacopladas: o *Core Nativo*, o *Legacy Bridge* e o *Loader de Ativos*. O núcleo nativo gerencia matemática de vetores e máquinas de estados hierárquicas a constantes 60 FPS, totalmente isolado dos renderizadores. A ponte legada atua como um tradutor em tempo real, capturando arquivos clássicos (`.sff`, `.air`, `.snd`, `.cns`) e convertendo expressões textuais complexas em funções lambdas estáticas do TypeScript e texturas WebP compactas de alto desempenho.
+
+Para garantir a fluidez crucial em jogos competitivos, o Lepus executa um ciclo de vida determinístico de quadros a cada 16.6ms. As entradas do teclado ou gamepad são coletadas e armazenadas em um *Input Buffer* reativo, permitindo técnicas avançadas de combate como janelas de reversão e cancelamentos. A física de colisão é processada nativamente através de caixas delimitadoras do tipo AABB (Hitbox/Hurtbox), disparando eventos precisos de impacto, defesa ou contra-ataque de forma síncrona.
+
+O motor se destaca pela sua resiliência através do **Asset Integrity Contract (AIC)**. Ao ler o cartucho virtual do personagem (`.lepus` ou `.json`), o sistema varre a integridade das animações e comportamentos fundamentais. Caso encontre omissões críticas (como a ausência de um sprite de dano), o módulo **CommonGenerator** entra em ação, desenhando de forma procedural uma representação visual neonatal diretamente na memória do Phaser para evitar travamentos do sistema e permitir testes imediatos de código imperfeito.
+
+Em termos de lógica avançada, a engine substitui os arquivos CNS lineares por **StateHub**, uma implementação formal de Máquina de Estados Hierárquicos (HSM). Isso permite que estados complexos como "Ataque Aéreo" herdem propriedades físicas globais do seu estado pai ("No Ar") sem requisições redundantes de código. Essa modularidade limpa é complementada por um sistema de áudio espacializado em 3D e um motor de efeitos de impacto (HitStop e ScreenShake) que conferem o feedback tátil "crocante" característico de grandes clássicos dos arcades.
+
+O Lepus Fight Engine está sob a licença de código aberto GPL v3, alimentando um roteiro ambicioso que inclui inteligência artificial com TensorFlow.js para aprendizado de padrões de jogadores e *Netcode com Rollback* determinístico. O projeto prova que a flexibilidade das tecnologias web modernas, quando orquestrada sob rígidos conceitos de ciência da computação, pode equiparar-se e até superar as limitações de plataformas de jogos nativos consolidados.

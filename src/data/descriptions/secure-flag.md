@@ -1,0 +1,11 @@
+# SECURE FLAG // Ambiente Didático de Cibersegurança Forense
+
+O **Secure Flag** é um ecossistema educacional de *Capture The Flag* (CTF) projetado para aproximar estudantes universitários do mundo prático da cibersegurança e perícia computacional. Desenvolvido originalmente para o Centro Universitário do Planalto Central (UNICEPLAC), o projeto nasceu para combater o déficit de profissionais capacitados na área de segurança digital, oferecendo um ambiente seguro e simulado para o treinamento de habilidades investigativas.
+
+A experiência de simulação é composta por duas aplicações web fictícias integradas e um gerenciador central de desafios. A narrativa gira em torno de uma investigação digital de um suposto ataque cibernético a um grupo financeiro fictício. Os participantes assumem o papel de peritos computacionais que precisam explorar códigos, decifrar arquivos, analisar logs e reverter binários para descobrir pistas ocultas, chamadas de "flags".
+
+O ponto de entrada da investigação é o **Yaldabaoth-Home**, um portal institucional limpo e promocional. Atrás de sua fachada corporativa, a página esconde pistas e pontos de ancoragem para engenharia social reversa. A navegação intuitiva e o suporte a temas dinâmicos ocultam sutilezas no código-fonte e metadados que os alunos precisam analisar para avançar na linha do tempo da intrusão.
+
+O núcleo técnico da invasão simulada reside no **Yaldabaoth-Bank-Corporate**, uma aplicação em **React 18** e **Vite** que reproduz um sistema bancário de email corporativo completo. A interface possui validações realistas de credenciais e uma caixa de entrada dinâmica com mensagens de funcionários fictícios. Nessas trocas de mensagens e nos anexos das transações residem os desafios mais complexos de criptografia e análise de dados.
+
+Todo o ecossistema é complementado pela plataforma **Secure Flag CTF** (baseada em containers Docker e na engine CTFd), responsável pela validação automática das chaves, controle de ranking em tempo real, suporte multi-idiomas e atribuição progressiva de pontos. Com desafios balanceados do iniciante ao intermediário, o Secure Flag é uma solução versátil para laboratórios acadêmicos, distribuído sob licenciamento MIT para código e Creative Commons para conteúdo de treinamento.

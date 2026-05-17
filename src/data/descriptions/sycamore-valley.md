@@ -1,0 +1,11 @@
+# SYCAMORE VALLEY GAME // Terror e Exploração Paranormal em Pixel Art
+
+**Sycamore Valley** é um jogo de terror e exploração em 2D desenvolvido sob uma estética *pixel-art* retrô de atmosfera densa. Nascido como um universo alternativo e reimplementação criativa inspirada no projeto "The Mystery of Whisper Valley", o game expande a lore clássica ao colocar o jogador no papel do Agente Especial Evan Brecht da AIP (Agência de Investigações Paranormais), encarregado de investigar o desaparecimento misterioso de civis e confrontar uma entidade hostil conhecida como Yaldabaoth.
+
+A jogabilidade combina o charme clássico dos jogos de aventura em visão superior (*top-down*) com mecânicas modernas de combate dinâmico. O jogador utiliza o teclado para movimentação e mira livre com o mouse, atirando na direção do cursor. O combate é propositalmente tenso e claustrofóbico, gerenciado por um **Sistema de Stamina e Foco** que penaliza o desespero e exige precisão nos disparos sob situações de estresse elevado.
+
+Além do combate físico, Sycamore Valley aposta intensamente em quebra-cabeças investigativos e coleta de pistas documentais espalhadas pelos cenários. O progresso exige atenção a detalhes e interpretação de lore ocultista e anotações científicas de rituais e incidentes paranormais. Essa cadência alternada entre a ação tática e a contemplação intelectual reforça a atmosfera constante de isolamento existencial e perigo iminente.
+
+Tecnicamente, o motor gráfico opera de forma nativa e otimizada na web. Todos os recursos visuais de pixel art e efeitos de iluminação são compactados em formato WebP moderno, permitindo um tempo de carregamento assíncrono instantâneo por meio de caches controlados. A sonoplastia dinâmica utiliza a Web Audio API para reproduzir efeitos de áudio espacializado, gerando rangidos, ventanias e sussurros que reagem à proximidade do jogador e constroem a tensão sonora.
+
+Sycamore Valley é um experimento artístico e técnico que demonstra como a simplicidade dos gráficos bidimensionais em pixel art, quando aliada a uma sonoplastia impecável e mecânicas de jogo polidas, consegue evocar sensações profundas de horror e suspense diretamente no navegador, sem a necessidade de downloads pesados.

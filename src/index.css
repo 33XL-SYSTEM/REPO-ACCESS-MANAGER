@@ -96,3 +96,18 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+/* Enable inline-block rendering for badges and small images in markdown prose */
+.prose img {
+  display: inline-block !important;
+  margin-top: 0.25rem !important;
+  margin-bottom: 0.25rem !important;
+  margin-right: 0.5rem !important;
+  vertical-align: middle;
+}
+
+/* Force justified text alignment for paragraphs inside markdown prose */
+.prose p {
+  text-align: justify !important;
+}
+

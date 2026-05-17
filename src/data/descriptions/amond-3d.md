@@ -1,0 +1,11 @@
+# AMOND 3D ENGINE // Sandbox Espacial e Engine 3D Independente
+
+A **Amond 3D Engine** é um motor gráfico tridimensional independente construído sobre o ecossistema do **Three.js** e WebGL. Projetada originalmente para atuar como uma plataforma de cognição espacial e produtividade imersiva, a engine transforma conceitos abstratos de anotações e diagramas em um ambiente arquitetônico totalmente navegável, tridimensional e persistente no navegador.
+
+A arquitetura do motor é estruturada em torno do padrão de **Entity Component System (ECS)**, garantindo excelente performance e modularidade na renderização de centenas de objetos interativos na tela. Essa abordagem orientada a dados separa rigidamente a física, a renderização gráfica e a lógica de comportamento dos objetos, facilitando a expansão do ambiente de simulação com novos módulos sem afetar a estabilidade do ciclo de renderização.
+
+Visualmente, a Amond 3D implementa técnicas avançadas de renderização para entregar uma atmosfera imersiva. A pipeline gráfica conta com efeitos de pós-processamento como *Bloom* dinâmico, *Film Grain* analógico e oclusão de sombras em tempo real. O ambiente é integrado a um **Spatial Audio Engine** que simula a atenuação acústica tridimensional de sons baseados na distância e na orientação da câmera, promovendo uma imersão auditiva impressionante.
+
+Nas mecânicas de *sandbox*, a engine oferece controle total de câmera na primeira pessoa, física básica de colisões por bounding boxes e um sistema de construção estilo *voxel* (bloco a bloco) que permite aos usuários modificarem a arquitetura tridimensional da sala de forma interativa. O comportamento de entidades não jogáveis (NPCs) é gerenciado por inteligências artificiais baseadas em máquinas de estados, proporcionando vida ao mundo virtual.
+
+A persistência do progresso do usuário é tratada de forma local e transparente por meio do **Dexie.js** (um wrapper veloz sobre IndexedDB), permitindo salvar estruturas complexas criadas no navegador sem depender de logins ou servidores de terceiros. A Amond 3D demonstra o potencial da web moderna como uma plataforma capaz de entregar ferramentas criativas de alto nível técnico e experiências tridimensionais integradas à produtividade.

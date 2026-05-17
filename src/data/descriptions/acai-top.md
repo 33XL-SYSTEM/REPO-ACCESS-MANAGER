@@ -1,0 +1,11 @@
+# AÇAÍ TOP LANCHES // Plataforma de Vendas e E-commerce Integrado
+
+O **Açaí Top Lanches** é uma plataforma robusta de e-commerce e gestão operacional desenvolvida sob medida para o setor de alimentação e *delivery*. O sistema nasceu para modernizar a jornada de compra e otimizar o fluxo de recebimento de comandas de uma lanchonete real, eliminando a dependência de intermediários de entregas tradicionais e fortalecendo o canal direto de vendas do estabelecimento comercial.
+
+A arquitetura de software é altamente escalável e dividida em duas frentes complementares: um front-end moderno em **React 19**, **TypeScript** e **Vite**; e um ecossistema de backend híbrido. Em produção, a lanchonete utiliza rotas de **APIs Serverless hospedadas na Vercel** integradas ao **Vercel Postgres** para gerenciamento de banco de dados; enquanto o ambiente de testes local apoia-se em um servidor estruturado em **Node.js** e Express.
+
+A experiência do usuário (UX) é desenhada para converter visitas em vendas instantâneas. A plataforma oferece um cardápio interativo e expansível com suporte nativo a modo noturno e um **Sistema Construtor de Copos**. Esse construtor permite ao cliente customizar seu açaí em tempo real, arrastando, incluindo ou removendo coberturas e adicionais com cálculo dinâmico e transparente do preço final, acompanhado de notificações sonoras suaves ao adicionar itens.
+
+O fechamento da compra se dá por meio de um **Checkout Híbrido** inteligente. Ao concluir a compra, o sistema salva o pedido na base de dados segura e dispara uma mensagem estruturada via WhatsApp API diretamente para o número comercial do estabelecimento, assegurando que a cozinha e a equipe de entrega recebam o pedido impresso imediatamente. O carrinho do usuário possui persistência automática no navegador para evitar perdas em caso de oscilações de rede.
+
+Na retaguarda, o Açaí Top Lanches disponibiliza um **Painel Administrativo** sofisticado para os gestores da lanchonete. O dashboard exibe gráficos de vendas diárias e mensais, acompanhamento de metas financeiras e um chat ponto a ponto (P2P) via **PeerJS** para coordenação instantânea de tarefas e entregadores. O projeto ilustra como a aplicação prática de engenharia web pode agregar valor real, reduzindo custos de comissão e aumentando a lucratividade operacional de pequenos comércios.

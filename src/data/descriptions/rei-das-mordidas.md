@@ -1,0 +1,11 @@
+# REI DAS MORDIDAS // Portal Gastronômico e Blog de Alta Performance
+
+O **Rei das Mordidas** é uma plataforma e blog de receitas gastronômicas *premium* projetado para oferecer uma experiência digital imersiva e de alta performance. O projeto representa a evolução de um catálogo estático tradicional de alimentos para uma plataforma interativa de receitas e engajamento gastronômico, unindo a velocidade da engenharia de front-end a um apelo visual refinado que busca instigar o apetite do usuário por meio do design.
+
+A identidade visual da interface baseia-se em princípios de *Rich Aesthetics* e design moderno. O portal conta com um efeito dinâmico proprietário em CSS que denomino **Extreme Jelly Movement**, criando uma animação orgânica e fluida no plano de fundo que simula o movimento suave de gelatina ou líquidos. Essa fluidez é complementada por uma paleta de cores quentes e vibrantes e micro-animações em **Framer Motion** que conferem peso e suavidade às interações.
+
+Do ponto de vista funcional, o Rei das Mordidas dispõe de um **Sistema de Compartilhamento Inteligente** que utiliza a *Web Share API* nativa dos navegadores de celulares, permitindo que os visitantes compartilhem receitas em suas redes sociais instantaneamente com um clique. A plataforma também dispõe de uma seção interativa para comentários e feedbacks imediatos, enriquecendo o senso de comunidade em torno de cada prato.
+
+A gestão e publicação do conteúdo gastronômico ocorre de forma limpa e modular através de arquivos estruturados em **Markdown com Frontmatter**. Isso permite ao administrador redigir ingredientes, instruções de preparo e tempos de cozimento de forma legível e organizada, que é posteriormente processada e convertida na interface gráfica por meio de pipelines estáticos de renderização, garantindo tempos de resposta ultrarrápidos e excelente otimização para motores de busca (SEO).
+
+O Rei das Mordidas demonstra como a aplicação de designs inovadores, efeitos dinâmicos elegantes e estruturas de dados simplificadas podem transformar um portal clássico de culinária em uma vitrine tecnológica envolvente, provando que a engenharia de software e a gastronomia criativa conversam na mesma linguagem de excelência e bom gosto.
