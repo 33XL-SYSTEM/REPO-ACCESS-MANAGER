@@ -8,9 +8,11 @@ import trymonOsDescription from './descriptions/trymon-os.md?raw';
 import sycamoreValleyDescription from './descriptions/sycamore-valley.md?raw';
 import reiDasMordidasDescription from './descriptions/rei-das-mordidas.md?raw';
 import acaiTopDescription from './descriptions/acai-top.md?raw';
+import zebraoDescription from './descriptions/zebrao.md?raw';
+import selfPandoraDescription from './descriptions/self-pandora.md?raw';
 
 export type ProjectCategory = 
-  | 'R.A.M' 
+  | 'CAUAN33XL' 
   | 'ACADÊMICOS' 
   | 'A.L.T' 
   | 'JOGOS' 
@@ -32,7 +34,7 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  // Categoria R.A.M
+  // Categoria CAUAN33XL
   {
     id: 'ram',
     name: 'PROJETO R.A.M',
@@ -41,7 +43,7 @@ export const projects: Project[] = [
     tags: ['React', 'TypeScript', 'Tailwind', 'Vite'],
     githubUrl: 'https://github.com/Cauan33XL/REPO-ACCESS-MANAGER',
     isPrivate: false,
-    category: 'R.A.M',
+    category: 'CAUAN33XL',
     status: 'active'
   },
   
@@ -111,9 +113,8 @@ export const projects: Project[] = [
     description: 'Jogo de luta desenvolvido com TypeScript.',
     fullDescription: lepusFightDescription,
     tags: ['Game', 'TypeScript', 'Phaser', 'Engine'],
-    githubUrl: 'https://github.com/Cauan33XL/LEPUS-FIGHT-ENGINE',
     demoUrl: 'https://lepus-fight-ts.vercel.app/',
-    isPrivate: false,
+    isPrivate: true,
     category: 'A.L.T',
     status: 'active'
   },
@@ -143,6 +144,29 @@ export const projects: Project[] = [
   },
 
   // CATEGORIA JOGOS
+  {
+    id: 'self-pandora',
+    name: 'O Self de Pandora',
+    description: 'Jogo de plataforma 3D psicológico e abstrato focado na integração da Sombra interior.',
+    fullDescription: selfPandoraDescription,
+    tags: ['Game', 'Three.js', 'Web Audio API', 'TypeScript', 'Vite'],
+    githubUrl: 'https://github.com/Cauan33XL/SELF-PANDORA-GAME',
+    demoUrl: 'https://self-pandora-game.vercel.app/',
+    isPrivate: false,
+    category: 'JOGOS',
+    status: 'active'
+  },
+  {
+    id: 'zebrao-reino-da-quantidade',
+    name: 'Zebrão: O Reino da Quantidade',
+    description: 'Sandbox Estranho e Metafísico híbrido em 2.5D/3D (Three.js + Phaser 3).',
+    fullDescription: zebraoDescription,
+    tags: ['Game', 'TypeScript', 'Three.js', 'Phaser 3', 'Vite'],
+    demoUrl: 'https://zebrao-reino-da-quantidade-game.vercel.app/',
+    isPrivate: false,
+    category: 'JOGOS',
+    status: 'active'
+  },
   {
     id: 'sycamore-valley',
     name: 'Sycamore Valley Game',

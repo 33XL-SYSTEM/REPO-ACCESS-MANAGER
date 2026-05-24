@@ -17,7 +17,7 @@ const Home: React.FC = () => {
 
   const categories: (Project['category'] | 'ALL')[] = [
     'ALL', 
-    'R.A.M', 
+    'CAUAN33XL', 
     'ACADÊMICOS', 
     'A.L.T', 
     'JOGOS', 
