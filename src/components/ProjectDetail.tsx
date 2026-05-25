@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import ReactMarkdown from 'react-markdown';
 import { GitBranch, ExternalLink, ArrowLeft, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import type { Project } from '../data/projects';
+import { usePreview } from '../context/PreviewContext';
 
 interface ProjectDetailProps {
   project: Project;
@@ -10,6 +11,7 @@ interface ProjectDetailProps {
 }
 
 const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
+  const { openPreview } = usePreview();
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const handleNext = React.useCallback(() => {
@@ -88,15 +90,13 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
                 </a>
               )}
               {project.demoUrl && (
-                <a 
-                  href={project.demoUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-3 border-2 border-white/20 px-8 py-4 font-mono font-bold uppercase tracking-widest hover:border-white hover:bg-white/5 transition-all duration-300 text-base"
+                <button 
+                  onClick={() => openPreview(project.demoUrl!, project.name)}
+                  className="flex-1 flex items-center justify-center gap-3 border-2 border-white/20 px-8 py-4 font-mono font-bold uppercase tracking-widest hover:border-white hover:bg-white/5 transition-all duration-300 text-base cursor-pointer"
                 >
                   <ExternalLink size={20} />
                   Acessar Site
-                </a>
+                </button>
               )}
             </div>
           </div>

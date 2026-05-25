@@ -5,20 +5,23 @@ import Home from './pages/Home';
 import About from './pages/About';
 import ContactPage from './pages/ContactPage';
 import { MusicProvider } from './context/MusicContext';
+import { PreviewProvider } from './context/PreviewContext';
 
 const App: React.FC = () => {
   return (
-    <MusicProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="contact" element={<ContactPage />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </MusicProvider>
+    <PreviewProvider>
+      <MusicProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="about" element={<About />} />
+              <Route path="contact" element={<ContactPage />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </MusicProvider>
+    </PreviewProvider>
   );
 };
 

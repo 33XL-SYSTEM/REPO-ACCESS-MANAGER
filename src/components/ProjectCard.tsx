@@ -1,6 +1,7 @@
 import React from 'react';
 import GlassCard from './GlassCard';
 import type { Project } from '../data/projects';
+import { usePreview } from '../context/PreviewContext';
 
 interface ProjectCardProps {
   project: Project;
@@ -9,6 +10,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, isHorizontal = false }) => {
+  const { openPreview } = usePreview();
   return (
     <div onClick={onClick} className={`cursor-pointer group h-full ${isHorizontal ? 'w-full' : ''}`}>
       <GlassCard hoverable className={`h-full flex ${isHorizontal ? 'flex-col md:flex-row gap-8 md:items-center' : 'flex-col'} border-white/5 bg-white/[0.02]`}>
@@ -56,15 +58,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, isHorizonta
             </a>
           )}
           {project.demoUrl && (
-            <a 
-              href={project.demoUrl} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="flex-1 text-center border border-white/20 py-3 text-xs font-mono font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300"
+            <button 
+              onClick={(e) => {
+                e.stopPropagation();
+                openPreview(project.demoUrl!, project.name);
+              }}
+              className="flex-1 text-center border border-white/20 py-3 text-xs font-mono font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300 cursor-pointer"
             >
               Deploy
-            </a>
+            </button>
           )}
         </div>
       </GlassCard>

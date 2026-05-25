@@ -1,5 +1,6 @@
 import ramDescription from './descriptions/ram.md?raw';
 import shop33xlDescription from './descriptions/33xl-shop.md?raw';
+import cauan33xlWebsiteDescription from './descriptions/cauan33xl-website.md?raw';
 import secureFlagDescription from './descriptions/secure-flag.md?raw';
 import hydropushDescription from './descriptions/hydropush.md?raw';
 import bancoSicMundusDescription from './descriptions/banco-sic-mundus.md?raw';
@@ -36,6 +37,17 @@ export interface Project {
 
 export const projects: Project[] = [
   // Categoria CAUAN33XL
+  {
+    id: 'cauan33xl-website',
+    name: 'CAUAN33XL WEBSITE',
+    description: 'Website pessoal e portfólio de Cauan Gabriel (Cauan33XL). Hub central que reúne projetos, artigos, currículo e formas de contato.',
+    fullDescription: cauan33xlWebsiteDescription,
+    tags: ['React 18', 'TypeScript 5.9', 'Tailwind CSS 4', 'Vite 6', 'Framer Motion', 'Radix UI'],
+    demoUrl: 'https://cauan33xl-website.vercel.app/',
+    isPrivate: true,
+    category: 'CAUAN33XL',
+    status: 'active'
+  },
   {
     id: 'ram',
     name: 'PROJETO R.A.M',

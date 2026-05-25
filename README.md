@@ -57,6 +57,7 @@ O R.A.M foi construído para ser extremamente rápido, estático e de fácil man
 - **Tailwind CSS v4:** Framework utility-first utilizado de forma intensiva para construir a UI retro-punk sem a necessidade de arquivos CSS separados (exceto para animações globais específicas).
 - **React Router DOM:** Gerenciamento de rotas (SPA) para navegação sem recarregamento (ex: rota `/about`, `/contact`).
 - **Lucide React & React Icons:** Bibliotecas vetoriais leves e consistentes para iconography (como o botão do GitHub).
+- **Preview System (Iframe Portal):** Contexto global do React e overlay para preview interativo dos deploys diretamente na interface via iframe (com animações de carregamento que simulam um console de terminal, atalhos de teclado como `Esc` para fechar e suporte a recarregamento).
 
 ---
 
@@ -64,9 +65,9 @@ O R.A.M foi construído para ser extremamente rápido, estático e de fácil man
 
 Um dos maiores desafios técnicos do R.A.M foi a categorização. O sistema não utiliza categorias genéricas ("web", "mobile"). Em vez disso, os repositórios são filtrados através de uma taxonomia altamente autoral:
 
-- **R.A.M:** O próprio sistema (metalinguagem).
+- **CAUAN33XL:** Projetos principais e hubs do próprio desenvolvedor, incluindo o próprio **R.A.M**, meu Website Pessoal (Portfólio Principal) e o e-commerce de afiliados (**33XL Shop**).
 - **ACADÊMICOS:** Repositórios herdados de jornadas universitárias, papers e provas de conceito (CTFs, aplicativos de faculdade).
-- **A.L.T:** A sigla para *Alternativos/Laboratório*. São engines gráficas, sistemas operacionais experimentais e compiladores.
+- **A.L.T:** A sigla para *AMOND - LEPUS - TRYMON*. São engines gráficas, sistemas operacionais experimentais e compiladores.
 - **JOGOS:** Experiências de entretenimento desenvolvidas do zero (Canvas, WebGL, Phaser).
 - **SITES PRÓPRIOS:** Soluções e softwares SaaS desenvolvidos para manter ecossistemas comerciais.
 - **SITES CLIENTES:** Obras entregues como prestação de serviço de desenvolvimento web e engenharia de software.
@@ -91,6 +92,7 @@ Se o array de projetos daquela categoria possui `.length === 1`, a UI automatica
 - **Hero Section:** Apresentação de impacto, com o título iluminado.
 - **Vinyl Spinner:** Uma peça puramente visual construída em HTML/CSS para tapar vácuos de layout e inserir personalidade. 
 - **Detalhes do Projeto:** Ao clicar em um card, a interface faz um swap modal/tela para uma view de leitura completa (suportando Markdown), exibindo o `fullDescription` do repositório.
+- **Project Preview Overlay (Live Preview):** Componente interativo que renderiza o deploy dos projetos via um iframe encapsulado em um portal do React. Conta com um visual retro-punk que simula conexões em linha de comando de terminal, controles de reload, redirecionamento para nova aba de forma nativa e fechamento via botão ou atalho `Esc`.
 
 ---
 
@@ -100,7 +102,7 @@ A fonte da verdade do sistema reside em `src/data/projects.ts`. O contrato TypeS
 
 \`\`\`typescript
 export type ProjectCategory = 
-  | 'R.A.M' | 'ACADÊMICOS' | 'A.L.T' 
+  | 'CAUAN33XL' | 'ACADÊMICOS' | 'A.L.T' 
   | 'JOGOS' | 'SITES PRÓPRIOS' | 'SITES CLIENTES';
 
 export interface Project {

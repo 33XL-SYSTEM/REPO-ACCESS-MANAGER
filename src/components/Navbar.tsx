@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
         </a>
       </div>
       
-      <div className="flex gap-4 md:gap-8 items-center font-mono text-[10px] md:text-sm uppercase tracking-widest text-white/60">
+      <div className="absolute left-1/2 -translate-x-1/2 flex gap-4 md:gap-8 items-center font-mono text-[10px] md:text-sm uppercase tracking-widest text-white/60">
         <Link to="/" className="hover:text-white transition-colors flex items-center gap-1.5">
           <LayoutGrid size={14} className="hidden sm:block" /> Projetos
         </Link>

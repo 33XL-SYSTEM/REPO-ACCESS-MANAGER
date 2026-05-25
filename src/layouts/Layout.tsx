@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import FloatingPlayer from '../components/FloatingPlayer';
+import ProjectPreview from '../components/ProjectPreview';
 
 const Layout: React.FC = () => {
   return (
@@ -34,6 +35,7 @@ const Layout: React.FC = () => {
       </footer>
       
       <FloatingPlayer />
+      <ProjectPreview />
     </div>
   );
 };
