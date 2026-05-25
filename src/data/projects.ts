@@ -1,4 +1,5 @@
 import ramDescription from './descriptions/ram.md?raw';
+import shop33xlDescription from './descriptions/33xl-shop.md?raw';
 import secureFlagDescription from './descriptions/secure-flag.md?raw';
 import hydropushDescription from './descriptions/hydropush.md?raw';
 import bancoSicMundusDescription from './descriptions/banco-sic-mundus.md?raw';
@@ -42,7 +43,19 @@ export const projects: Project[] = [
     fullDescription: ramDescription,
     tags: ['React', 'TypeScript', 'Tailwind', 'Vite'],
     githubUrl: 'https://github.com/Cauan33XL/REPO-ACCESS-MANAGER',
+    demoUrl: 'https://repo-access-manager.vercel.app/',
     isPrivate: false,
+    category: 'CAUAN33XL',
+    status: 'active'
+  },
+  {
+    id: '33xl-shop',
+    name: '33XL SHOP',
+    description: 'E-commerce de Afiliados. Vitrine inteligente e ultra-estilizada focada em escalabilidade e design imersivo.',
+    fullDescription: shop33xlDescription,
+    tags: ['React 19', 'TypeScript', 'Tailwind v4', 'Vite 8'],
+    demoUrl: 'https://33xl-shop-ecommerce.vercel.app/',
+    isPrivate: true,
     category: 'CAUAN33XL',
     status: 'active'
   },
