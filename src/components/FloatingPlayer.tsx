@@ -17,7 +17,7 @@ const FloatingPlayer: React.FC = () => {
 
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="relative w-14 h-14 rounded-full bg-[#111] border border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.1)] flex items-center justify-center hover:scale-105 transition-all duration-300 group overflow-hidden"
+        className="relative w-14 h-14 rounded-full bg-black/95 border border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.1)] flex items-center justify-center hover:scale-105 transition-all duration-300 group overflow-hidden"
       >
         {isOpen ? (
           <X className="text-white relative z-10" size={24} />

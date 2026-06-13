@@ -91,7 +91,8 @@
     "back": "Volver"
   },
   "project": {
-    "live_preview": "VISTA PREVIA //",
+
+    "live_preview": "LIVE PREVIEW //",
     "github": "REPO GITHUB //",
     "start_preview": "Iniciando Vista Previa Remota",
     "preview_error": "Vista Previa No Disponible",

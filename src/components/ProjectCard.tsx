@@ -27,11 +27,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, isHorizonta
             {t(`projects.list.${project.id}.name`, project.name)}
           </h3>
             </div>
-            {project.isPrivate && (
-              <span className="px-2 py-0.5 border border-white/20 text-[10px] font-mono uppercase text-white/60 whitespace-nowrap">
-                {t('project.private', 'Private')}
-              </span>
-            )}
+            <span className="px-2 py-0.5 border border-white/20 text-[10px] font-mono uppercase text-white/60 whitespace-nowrap">
+              {project.isPrivate ? t('project.private', 'Privado') : t('project.public', 'Público')}
+            </span>
           </div>
           
           <p className="text-white/80 text-[15px] mt-2 font-sans line-clamp-3">

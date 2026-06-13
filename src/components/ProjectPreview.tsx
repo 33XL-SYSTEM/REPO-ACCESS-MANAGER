@@ -103,7 +103,7 @@ const ProjectPreview: React.FC = () => {
       </header>
 
       {/* Frame Container */}
-      <div className="flex-1 w-full h-full relative bg-[#050505]">
+      <div className="flex-1 w-full h-full relative bg-black">
         {isLoading && (
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-brand-black/95 z-0">
             <div className="text-center space-y-2 max-w-md px-6">

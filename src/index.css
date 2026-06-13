@@ -35,9 +35,22 @@
     font-family: var(--font-sans);
   }
 
+  .light-theme {
+    --color-brand-black: #ffffff;
+    --color-brand-white: #000000;
+    --color-black: #ffffff;
+    --color-white: #000000;
+    --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  }
+
   body {
     @apply antialiased overflow-x-hidden;
     background: radial-gradient(circle at 50% 50%, #080808 0%, #000000 100%);
+    transition: background 0.5s ease;
+  }
+
+  .light-theme body {
+    background: radial-gradient(circle at 50% 50%, #f0f0f0 0%, #ffffff 100%);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -88,15 +101,23 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #000;
+  background: var(--color-black, #000);
 }
 
 ::-webkit-scrollbar-thumb {
   background: #333;
 }
 
+.light-theme ::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.light-theme ::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
 }
 
 /* Enable inline-block rendering for badges and small images in markdown prose */

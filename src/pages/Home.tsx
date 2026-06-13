@@ -157,19 +157,19 @@ const Home: React.FC = () => {
         @keyframes text-pulse {
           0%, 100% {
             color: transparent;
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+            -webkit-text-stroke: 1px color-mix(in srgb, var(--color-white) 40%, transparent);
             text-shadow: none;
           }
           50% {
-            color: white;
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 1);
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            color: var(--color-white);
+            -webkit-text-stroke: 1px var(--color-white);
+            text-shadow: 0 0 20px color-mix(in srgb, var(--color-white) 50%, transparent);
           }
         }
         
         .text-outline-white {
           color: transparent;
-          -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+          -webkit-text-stroke: 1px color-mix(in srgb, var(--color-white) 40%, transparent);
           animation: text-pulse 4s ease-in-out infinite;
         }
       `}</style>

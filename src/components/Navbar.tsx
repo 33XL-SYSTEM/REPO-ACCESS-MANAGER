@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { LayoutGrid, TerminalSquare, Mail } from 'lucide-react';
+import { LayoutGrid, TerminalSquare, Mail, Sun, Moon } from 'lucide-react';
 import { FiGithub } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar: React.FC = () => {
   const { t } = useTranslation();
+  
+  const [isLightMode, setIsLightMode] = useState<boolean>(() => {
+    return localStorage.getItem('theme') === 'light';
+  });
+
+  useEffect(() => {
+    if (isLightMode) {
+      document.documentElement.classList.add('light-theme');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.classList.remove('light-theme');
+      localStorage.setItem('theme', 'dark');
+    }
+  }, [isLightMode]);
+
+  const toggleTheme = () => setIsLightMode(prev => !prev);
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 px-6 py-4 flex justify-between items-center glass-dark border-b border-white/10">
@@ -36,6 +52,13 @@ const Navbar: React.FC = () => {
       </div>
       
       <div className="hidden sm:flex items-center gap-4">
+        <button 
+          onClick={toggleTheme}
+          className="w-10 h-10 flex items-center justify-center border border-white/20 text-white/60 hover:bg-white hover:text-black hover:border-white transition-colors"
+          title={isLightMode ? "Activate Dark Mode" : "Activate Light Mode"}
+        >
+          {isLightMode ? <Sun size={16} /> : <Moon size={16} />}
+        </button>
         <LanguageSwitcher />
         <a href="/#projects" className="inline-block retro-border px-4 py-1 text-xs uppercase font-mono tracking-widest bg-white text-black font-bold hover:invert transition-colors duration-300">
           {t('hero.explore', 'Explorar Repos')}

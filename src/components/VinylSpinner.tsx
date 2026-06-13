@@ -25,15 +25,15 @@ const VinylSpinner: React.FC = () => {
         style={{ animationPlayState: isPlaying ? 'running' : 'paused' }}
       >
         {/* Vinyl Grooves */}
-        <div className="absolute w-[300px] h-[300px] rounded-full border border-white/10 border-dashed opacity-50"></div>
-        <div className="absolute w-[260px] h-[260px] rounded-full border border-white/5"></div>
-        <div className="absolute w-[220px] h-[220px] rounded-full border border-white/10 border-dotted opacity-30"></div>
-        <div className="absolute w-[170px] h-[170px] rounded-full border border-white/5"></div>
+        <div className="absolute w-[300px] h-[300px] rounded-full border border-[#fff]/10 border-dashed opacity-50"></div>
+        <div className="absolute w-[260px] h-[260px] rounded-full border border-[#fff]/5"></div>
+        <div className="absolute w-[220px] h-[220px] rounded-full border border-[#fff]/10 border-dotted opacity-30"></div>
+        <div className="absolute w-[170px] h-[170px] rounded-full border border-[#fff]/5"></div>
         
         {/* Center Label */}
         <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center relative shadow-[0_0_20px_rgba(255,255,255,0.5)]">
           <div className="absolute inset-0 border-[6px] border-[#050505] rounded-full"></div>
-          <div className="w-4 h-4 bg-[#050505] rounded-full"></div>
+          <div className="w-4 h-4 bg-black rounded-full"></div>
         </div>
       </div>
 
@@ -53,7 +53,7 @@ const VinylSpinner: React.FC = () => {
               <div 
                 className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2"
               >
-                <div className="px-4 py-1.5 bg-[#050505]/80 backdrop-blur-md border border-white/30 text-[10px] font-mono whitespace-nowrap text-white uppercase tracking-widest shadow-[0_0_15px_rgba(255,255,255,0.15)] animate-pulse"
+                <div className="px-4 py-1.5 bg-black/80 backdrop-blur-md border border-white/30 text-[10px] font-mono whitespace-nowrap text-white uppercase tracking-widest shadow-[0_0_15px_rgba(255,255,255,0.15)] animate-pulse"
                      style={{ animationDelay: `${i * 0.7}s` }}>
                   {item}
                 </div>

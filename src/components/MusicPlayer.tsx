@@ -29,7 +29,7 @@ const MusicPlayer: React.FC = () => {
   };
 
   return (
-    <div className="w-full bg-[#050505]/80 backdrop-blur-xl border border-white/10 p-6 rounded-2xl flex flex-col gap-5 shadow-[0_0_30px_rgba(255,255,255,0.05)] relative overflow-hidden group">
+    <div className="w-full bg-black/80 backdrop-blur-xl border border-white/10 p-6 rounded-2xl flex flex-col gap-5 shadow-[0_0_30px_rgba(255,255,255,0.05)] relative overflow-hidden group">
       {/* Decorative gradient */}
       <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl -z-10 group-hover:bg-white/10 transition-colors duration-500"></div>
 
@@ -58,7 +58,7 @@ const MusicPlayer: React.FC = () => {
           max="100" 
           value={progress || 0} 
           onChange={handleSeek}
-          style={{ background: `linear-gradient(to right, white ${progress || 0}%, rgba(255, 255, 255, 0.2) ${progress || 0}%)` }}
+          style={{ background: `linear-gradient(to right, var(--color-white) ${progress || 0}%, color-mix(in srgb, var(--color-white) 20%, transparent) ${progress || 0}%)` }}
           className="w-full h-1 appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-2.5 [&::-webkit-slider-thumb]:h-2.5 [&::-webkit-slider-thumb]:bg-white rounded-full transition-all"
         />
         <div className="flex justify-between text-[9px] font-mono text-white/70 px-0.5">

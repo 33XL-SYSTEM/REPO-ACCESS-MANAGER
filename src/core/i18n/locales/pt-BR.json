@@ -91,6 +91,7 @@
     "back": "Voltar"
   },
   "project": {
+
     "live_preview": "LIVE PREVIEW //",
     "github": "GITHUB REPO //",
     "start_preview": "Iniciando Preview Remoto",

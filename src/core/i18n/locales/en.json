@@ -91,6 +91,7 @@
     "back": "Back"
   },
   "project": {
+
     "live_preview": "LIVE PREVIEW //",
     "github": "GITHUB REPO //",
     "start_preview": "Initiating Remote Preview",
