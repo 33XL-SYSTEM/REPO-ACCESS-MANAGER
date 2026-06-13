@@ -25,12 +25,7 @@ src/
 - **/artigos:** Technical articles feed.
 - **/contato:** Contact form.
 
-## ⚙️ Development Commands
 
-- `npm run dev` — Starts development server.
-- `npm run build` — Compiles the application.
-- `npm run preview` — Runs a local server to test production build.
-- `npm run lint` — Runs ESLint.
 
 ## 🌌 Advanced Architectural Vision and Scalability
 

@@ -53,6 +53,16 @@ export const projects: Project[] = [
     category: '33XL SYSTEM',
     status: 'active'
   },
+  {
+    id: '33xl-games-system',
+    name: '33XL GAMES SYSTEM',
+    description: 'Hub central minimalista que abriga os jogos autorais e metafísicos do universo 33XL com integração via Iframe.',
+    tags: ['React 18', 'TypeScript', 'Tailwind CSS v4', 'Vite 5'],
+    demoUrl: 'https://33xl-games-system.vercel.app/',
+    isPrivate: true,
+    category: '33XL SYSTEM',
+    status: 'active'
+  },
 
   // Projetos Academicos Herdados
   {
@@ -146,13 +156,12 @@ export const projects: Project[] = [
 
   // CATEGORIA JOGOS
   {
-    id: 'self-pandora',
-    name: 'O Self de Pandora',
-    description: 'Jogo de plataforma 3D psicológico e abstrato focado na integração da Sombra interior.',
-    tags: ['Game', 'Three.js', 'Web Audio API', 'TypeScript', 'Vite'],
-    githubUrl: 'https://github.com/Cauan33XL/SELF-PANDORA-GAME',
-    demoUrl: 'https://self-pandora-game.vercel.app/',
-    isPrivate: false,
+    id: 'sycamore-valley',
+    name: 'Sycamore Valley Game',
+    description: 'Experiência de jogo interativa no navegador.',
+    tags: ['Game', 'TypeScript', 'Canvas', 'Pixel Art'],
+    demoUrl: 'https://sycamore-valley-game.vercel.app/',
+    isPrivate: true,
     category: 'JOGOS',
     status: 'active'
   },
@@ -167,12 +176,23 @@ export const projects: Project[] = [
     status: 'active'
   },
   {
-    id: 'sycamore-valley',
-    name: 'Sycamore Valley Game',
-    description: 'Experiência de jogo interativa no navegador.',
-    tags: ['Game', 'TypeScript', 'Canvas', 'Pixel Art'],
-    demoUrl: 'https://sycamore-valley-game.vercel.app/',
+    id: 'over-mistake-ploy',
+    name: 'Over Mistake Ploy',
+    description: 'Ficção interativa corporativa isométrica ambientada no Bureau dos Esquilos e Sindicato dos Ratos.',
+    tags: ['Game', 'Three.js', 'Vite', 'TypeScript', 'HTML5', 'CSS'],
+    demoUrl: 'https://over-mistake-ploy-game.vercel.app/',
     isPrivate: true,
+    category: 'JOGOS',
+    status: 'active'
+  },
+  {
+    id: 'self-pandora',
+    name: 'O Self de Pandora',
+    description: 'Jogo de plataforma 3D psicológico e abstrato focado na integração da Sombra interior.',
+    tags: ['Game', 'Three.js', 'Web Audio API', 'TypeScript', 'Vite'],
+    githubUrl: 'https://github.com/Cauan33XL/SELF-PANDORA-GAME',
+    demoUrl: 'https://self-pandora-game.vercel.app/',
+    isPrivate: false,
     category: 'JOGOS',
     status: 'active'
   },

@@ -25,12 +25,7 @@ src/
 - **/artigos:** Feed de artículos técnicos.
 - **/contato:** Formulario de contacto.
 
-## ⚙️ Comandos de Desarrollo
 
-- `npm run dev` — Inicia el servidor de desarrollo.
-- `npm run build` — Compila la aplicación.
-- `npm run preview` — Ejecuta un servidor local para probar la compilación de producción.
-- `npm run lint` — Ejecuta ESLint.
 
 ## 🌌 Visión Arquitectónica Avanzada y Escalabilidad
 

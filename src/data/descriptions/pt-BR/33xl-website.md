@@ -42,12 +42,7 @@ A navegação é estruturada para cobrir tanto o aspecto corporativo quanto as i
 - **`/artigos`:** Feed de artigos técnicos integrados dinamicamente com o Supabase.
 - **`/contato`:** Formulário de envio de mensagens com o EmailJS.
 
-## ⚙️ Comandos de Desenvolvimento
 
-- `npm run dev` — Inicia o servidor de desenvolvimento na porta 3000.
-- `npm run build` — Compila a aplicação para produção, gerando arquivos otimizados em `dist/`.
-- `npm run preview` — Executa um servidor local para testar a versão de produção gerada.
-- `npm run lint` — Executa o ESLint para validar boas práticas e integridade do código.
 
 
 ## 🌌 Visão Arquitetural Avançada e Escalabilidade
