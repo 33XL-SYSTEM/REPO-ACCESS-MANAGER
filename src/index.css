@@ -2,7 +2,7 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-brand-black: #050505;
+  --color-brand-black: #000000;
   --color-brand-white: #ffffff;
   --color-brand-gray: #1a1a1a;
   --color-brand-silver: #a0a0a0;
@@ -37,7 +37,7 @@
 
   body {
     @apply antialiased overflow-x-hidden;
-    background: radial-gradient(circle at 50% 50%, #111111 0%, #000000 100%);
+    background: radial-gradient(circle at 50% 50%, #080808 0%, #000000 100%);
   }
 
   h1, h2, h3, h4, h5, h6 {

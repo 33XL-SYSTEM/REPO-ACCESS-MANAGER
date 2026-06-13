@@ -2,6 +2,7 @@ import React from 'react';
 import GlassCard from './GlassCard';
 import type { Project } from '../data/projects';
 import { usePreview } from '../context/PreviewContext';
+import { useTranslation } from 'react-i18next';
 
 interface ProjectCardProps {
   project: Project;
@@ -11,6 +12,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, isHorizontal = false }) => {
   const { openPreview } = usePreview();
+  const { t } = useTranslation();
   return (
     <div onClick={onClick} className={`cursor-pointer group h-full ${isHorizontal ? 'w-full' : ''}`}>
       <GlassCard hoverable className={`h-full flex ${isHorizontal ? 'flex-col md:flex-row gap-8 md:items-center' : 'flex-col'} border-white/5 bg-white/[0.02]`}>
@@ -18,27 +20,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, isHorizonta
         <div className={`flex flex-col ${isHorizontal ? 'flex-1' : 'flex-grow'}`}>
           <div className="flex justify-between items-start mb-4">
             <div className="flex flex-col">
-              <span className="text-[10px] font-mono text-white/40 uppercase tracking-widest mb-1">
-                {project.category} // {project.status}
+              <span className="text-[10px] font-mono text-white/60 uppercase tracking-widest mb-1">
+                {t(`projects.categories.${project.category}`, project.category)} // {t(`project.status.${project.status}`, project.status)}
               </span>
-              <h3 className={`font-bold text-white group-hover:text-white transition-colors ${isHorizontal ? 'text-3xl' : 'text-xl'}`}>
-                {project.name}
-              </h3>
+              <h3 className="text-xl md:text-2xl font-bold uppercase tracking-tighter group-hover:translate-x-2 transition-transform duration-300">
+            {t(`projects.list.${project.id}.name`, project.name)}
+          </h3>
             </div>
             {project.isPrivate && (
-              <span className="px-2 py-0.5 border border-white/20 text-[10px] font-mono uppercase text-white/40 whitespace-nowrap">
-                Private
+              <span className="px-2 py-0.5 border border-white/20 text-[10px] font-mono uppercase text-white/60 whitespace-nowrap">
+                {t('project.private', 'Private')}
               </span>
             )}
           </div>
           
-          <p className="text-white/60 text-sm mb-6 leading-relaxed">
-            {project.description}
+          <p className="text-white/80 text-[15px] mt-2 font-sans line-clamp-3">
+            {t(`projects.list.${project.id}.description`, project.description)}
           </p>
           
-          <div className="flex flex-wrap gap-2 mb-6">
+          <div className="flex flex-wrap gap-2 mt-5 mb-6">
             {project.tags.map(tag => (
-              <span key={tag} className="text-[10px] font-mono bg-white/5 px-2 py-0.5 rounded-sm text-white/50 border border-white/5">
+              <span key={tag} className="text-[10px] font-mono bg-white/5 px-2 py-0.5 rounded-sm text-white/70 border border-white/5">
                 {tag}
               </span>
             ))}

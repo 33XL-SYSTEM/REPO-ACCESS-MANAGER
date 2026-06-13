@@ -1,8 +1,10 @@
 import React from 'react';
 import { Mail, Phone } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaInstagram, FaGitlab } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 const Contact: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <section id="contact" className="py-32 relative">
       <div className="max-w-5xl mx-auto px-6 relative z-10">
@@ -15,8 +17,8 @@ const Contact: React.FC = () => {
           <div className="border border-white/10 bg-brand-black p-8 md:p-16 relative">
             {/* Top Bar */}
             <div className="flex justify-center mb-16 border-b border-white/10 pb-4">
-              <span className="font-mono text-xs md:text-sm tracking-[0.3em] uppercase text-white/60 text-center">
-                Independent Software Developer | IT Enthusiast & Student
+              <span className="font-mono text-xs md:text-sm tracking-[0.3em] uppercase text-white/80 text-center">
+                {t('contact.subtitle')}
               </span>
             </div>
 
@@ -31,7 +33,7 @@ const Contact: React.FC = () => {
               
               <div className="flex items-center justify-center gap-4">
                 <div className="h-px w-12 bg-white/20"></div>
-                <span className="font-mono text-sm tracking-[0.2em] uppercase text-white/80">
+                <span className="font-mono text-sm tracking-[0.2em] uppercase text-white">
                   Cognoscere Et Creare
                 </span>
                 <div className="h-px w-12 bg-white/20"></div>
@@ -53,7 +55,7 @@ const Contact: React.FC = () => {
                     <FaLinkedin size={24} />
                   </div>
                   <div>
-                    <span className="block font-bold tracking-widest uppercase text-sm">Conecte-se no LinkedIn</span>
+                    <span className="block font-bold tracking-widest uppercase text-sm">{t('contact.linkedin')}</span>
                     <span className="block font-mono text-xs opacity-70">@cauan33xl</span>
                   </div>
                 </a>
@@ -68,7 +70,7 @@ const Contact: React.FC = () => {
                     <FaGithub size={24} />
                   </div>
                   <div>
-                    <span className="block font-bold tracking-widest uppercase text-sm">Explore no GitHub</span>
+                    <span className="block font-bold tracking-widest uppercase text-sm">{t('contact.github')}</span>
                     <span className="block font-mono text-xs opacity-70">@Cauan33XL</span>
                   </div>
                 </a>
@@ -83,7 +85,7 @@ const Contact: React.FC = () => {
                     <FaGitlab size={24} />
                   </div>
                   <div>
-                    <span className="block font-bold tracking-widest uppercase text-sm">Explore no GitLab</span>
+                    <span className="block font-bold tracking-widest uppercase text-sm">{t('contact.gitlab')}</span>
                     <span className="block font-mono text-xs opacity-70">@Cauan33XL</span>
                   </div>
                 </a>

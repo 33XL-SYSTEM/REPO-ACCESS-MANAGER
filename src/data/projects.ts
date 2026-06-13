@@ -1,31 +1,16 @@
-import ramDescription from './descriptions/ram.md?raw';
-import shop33xlDescription from './descriptions/33xl-shop.md?raw';
-import cauan33xlWebsiteDescription from './descriptions/cauan33xl-website.md?raw';
-import secureFlagDescription from './descriptions/secure-flag.md?raw';
-import hydropushDescription from './descriptions/hydropush.md?raw';
-import bancoSicMundusDescription from './descriptions/banco-sic-mundus.md?raw';
-import amond3dDescription from './descriptions/amond-3d.md?raw';
-import lepusFightDescription from './descriptions/lepus-fight.md?raw';
-import trymonOsDescription from './descriptions/trymon-os.md?raw';
-import sycamoreValleyDescription from './descriptions/sycamore-valley.md?raw';
-import reiDasMordidasDescription from './descriptions/rei-das-mordidas.md?raw';
-import acaiTopDescription from './descriptions/acai-top.md?raw';
-import zebraoDescription from './descriptions/zebrao.md?raw';
-import selfPandoraDescription from './descriptions/self-pandora.md?raw';
 
-export type ProjectCategory = 
-  | 'CAUAN33XL' 
-  | 'ACADÊMICOS' 
-  | 'A.L.T' 
-  | 'JOGOS' 
-  | 'SITES PRÓPRIOS' 
+export type ProjectCategory =
+  | '33XL SYSTEM'
+  | 'ACADÊMICOS'
+  | 'A.L.T'
+  | 'JOGOS'
+  | 'OUTROS PROJETOS'
   | 'SITES CLIENTES';
 
 export interface Project {
   id: string;
   name: string;
   description: string;
-  fullDescription?: string;
   tags: string[];
   githubUrl?: string;
   demoUrl?: string;
@@ -36,48 +21,44 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  // Categoria CAUAN33XL
+  // Categoria 33XL SYSTEM
   {
-    id: 'cauan33xl-website',
-    name: 'CAUAN33XL WEBSITE',
-    description: 'Website pessoal e portfólio de Cauan Gabriel (Cauan33XL). Hub central que reúne projetos, artigos, currículo e formas de contato.',
-    fullDescription: cauan33xlWebsiteDescription,
-    tags: ['React 18', 'TypeScript 5.9', 'Tailwind CSS 4', 'Vite 6', 'Framer Motion', 'Radix UI'],
-    demoUrl: 'https://cauan33xl-website.vercel.app/',
+    id: '33xl-website',
+    name: '33XL SYSTEM WEBSITE',
+    description: 'Hub central da 33XL SYSTEM, focado em criar soluções eficientes, ecossistemas robustos e arquiteturas modernas. Abriga projetos da marca e dossiê pessoal de Cauan33XL.',
+    tags: ['React 18', 'TypeScript 5.9', 'Tailwind CSS 4', 'Vite 6', 'Framer Motion', 'Radix UI', 'i18next'],
+    demoUrl: 'https://33xl-system-website.vercel.app/',
     isPrivate: true,
-    category: 'CAUAN33XL',
+    category: '33XL SYSTEM',
     status: 'active'
   },
   {
     id: 'ram',
     name: 'PROJETO R.A.M',
     description: 'Repo Access Manager - Hub central de acesso e documentação de todos os meus projetos.',
-    fullDescription: ramDescription,
     tags: ['React', 'TypeScript', 'Tailwind', 'Vite'],
     githubUrl: 'https://github.com/Cauan33XL/REPO-ACCESS-MANAGER',
     demoUrl: 'https://repo-access-manager.vercel.app/',
     isPrivate: false,
-    category: 'CAUAN33XL',
+    category: '33XL SYSTEM',
     status: 'active'
   },
   {
     id: '33xl-shop',
     name: '33XL SHOP',
     description: 'E-commerce de Afiliados. Vitrine inteligente e ultra-estilizada focada em escalabilidade e design imersivo.',
-    fullDescription: shop33xlDescription,
     tags: ['React 19', 'TypeScript', 'Tailwind v4', 'Vite 8'],
     demoUrl: 'https://33xl-shop-ecommerce.vercel.app/',
     isPrivate: true,
-    category: 'CAUAN33XL',
+    category: '33XL SYSTEM',
     status: 'active'
   },
-  
+
   // Projetos Academicos Herdados
   {
     id: 'secure-flag',
     name: 'SECURE FLAG CTF',
     description: 'Plataforma de Capture The Flag focada em segurança da informação.',
-    fullDescription: secureFlagDescription,
     tags: ['Security', 'Web', 'Challenge'],
     githubUrl: 'https://github.com/Cauan33XL/SECURE-FLAG-PROJETO-CTF',
     demoUrl: 'https://secure-flag-projeto-ctf.vercel.app/',
@@ -99,7 +80,6 @@ export const projects: Project[] = [
     id: 'hydropush',
     name: 'HYDROPUSH APP',
     description: 'Aplicativo de monitoramento e incentivo à hidratação.',
-    fullDescription: hydropushDescription,
     tags: ['React Native', 'Capacitor', 'Firebase'],
     githubUrl: 'https://github.com/Cauan33XL/HYDROPUSH-APP',
     demoUrl: 'https://hydropush-app.vercel.app/',
@@ -111,7 +91,6 @@ export const projects: Project[] = [
     id: 'banco-sic-mundus',
     name: 'BANCO SIC MUNDUS',
     description: 'Simulador bancário retro-futurístico e imersivo em C + WebAssembly + React 19, inspirado na série Dark.',
-    fullDescription: bancoSicMundusDescription,
     tags: ['C', 'WASM', 'React', 'TypeScript'],
     githubUrl: 'https://github.com/Cauan33XL/BANCO-SIC-MUNDUS',
     demoUrl: 'https://banco-sic-mundus.vercel.app/',
@@ -125,7 +104,6 @@ export const projects: Project[] = [
     id: 'amond-3d',
     name: 'Amond 3D Engine',
     description: 'Visualizador e plataforma de modelos 3D.',
-    fullDescription: amond3dDescription,
     tags: ['3D', 'Three.js', 'WebGL', 'TypeScript'],
     demoUrl: 'https://amond-3d.vercel.app/',
     isPrivate: true,
@@ -136,7 +114,6 @@ export const projects: Project[] = [
     id: 'lepus-fight',
     name: 'Lepus Fight Engine',
     description: 'Jogo de luta desenvolvido com TypeScript.',
-    fullDescription: lepusFightDescription,
     tags: ['Game', 'TypeScript', 'Phaser', 'Engine'],
     demoUrl: 'https://lepus-fight-ts.vercel.app/',
     isPrivate: true,
@@ -147,7 +124,6 @@ export const projects: Project[] = [
     id: 'trymon-os',
     name: 'TRYMON OS',
     description: 'Sistema operacional experimental baseado em web com interface moderna.',
-    fullDescription: trymonOsDescription,
     tags: ['Next.js', 'TypeScript', 'Tailwind', 'Rust', 'WASM'],
     githubUrl: 'https://github.com/Cauan33XL/TRYMON-OS',
     demoUrl: 'https://trymon-os.vercel.app/',
@@ -173,7 +149,6 @@ export const projects: Project[] = [
     id: 'self-pandora',
     name: 'O Self de Pandora',
     description: 'Jogo de plataforma 3D psicológico e abstrato focado na integração da Sombra interior.',
-    fullDescription: selfPandoraDescription,
     tags: ['Game', 'Three.js', 'Web Audio API', 'TypeScript', 'Vite'],
     githubUrl: 'https://github.com/Cauan33XL/SELF-PANDORA-GAME',
     demoUrl: 'https://self-pandora-game.vercel.app/',
@@ -185,7 +160,6 @@ export const projects: Project[] = [
     id: 'zebrao-reino-da-quantidade',
     name: 'Zebrão: O Reino da Quantidade',
     description: 'Sandbox Estranho e Metafísico híbrido em 2.5D/3D (Three.js + Phaser 3).',
-    fullDescription: zebraoDescription,
     tags: ['Game', 'TypeScript', 'Three.js', 'Phaser 3', 'Vite'],
     demoUrl: 'https://zebrao-reino-da-quantidade-game.vercel.app/',
     isPrivate: false,
@@ -196,7 +170,6 @@ export const projects: Project[] = [
     id: 'sycamore-valley',
     name: 'Sycamore Valley Game',
     description: 'Experiência de jogo interativa no navegador.',
-    fullDescription: sycamoreValleyDescription,
     tags: ['Game', 'TypeScript', 'Canvas', 'Pixel Art'],
     demoUrl: 'https://sycamore-valley-game.vercel.app/',
     isPrivate: true,
@@ -204,16 +177,15 @@ export const projects: Project[] = [
     status: 'active'
   },
 
-  // CATEGORIA SITES PRÓPRIOS
+  // CATEGORIA OUTROS PROJETOS
   {
     id: 'rei-das-mordidas',
     name: 'Rei das Mordidas',
     description: 'Sistema de gestão e vendas para setor alimentício.',
-    fullDescription: reiDasMordidasDescription,
     tags: ['Management', 'React', 'Framer Motion'],
     demoUrl: 'https://rei-das-mordidas.vercel.app/',
     isPrivate: true,
-    category: 'SITES PRÓPRIOS',
+    category: 'OUTROS PROJETOS',
     status: 'active'
   },
 
@@ -222,7 +194,6 @@ export const projects: Project[] = [
     id: 'acai-top',
     name: 'Açaí Top Lanches',
     description: 'Plataforma de delivery e cardápio digital para lanchonete.',
-    fullDescription: acaiTopDescription,
     tags: ['E-commerce', 'React', 'Delivery', 'Serverless'],
     demoUrl: 'https://acai-top-lanches.vercel.app/',
     isPrivate: true,

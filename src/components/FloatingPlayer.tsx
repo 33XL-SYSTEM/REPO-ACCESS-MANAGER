@@ -24,7 +24,7 @@ const FloatingPlayer: React.FC = () => {
         ) : (
           <div className="relative z-10 flex items-center justify-center w-full h-full">
             <Disc3 
-              className={`text-white/80 ${isPlaying ? 'animate-[spin_4s_linear_infinite]' : ''}`} 
+              className={`text-white ${isPlaying ? 'animate-[spin_4s_linear_infinite]' : ''}`} 
               size={32} 
             />
           </div>

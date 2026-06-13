@@ -1,0 +1,140 @@
+{
+  "hero": {
+    "terminal": "Instancia del Terminal: PR-AM-2026",
+    "title": "PROYECTO",
+    "subtitle": "R.A.M",
+    "description1": "Repo Access Manager es el núcleo central de acceso a documentación y repositorios de todos mis desarrollos. Un hub público para una mente distribuida.",
+    "description2": "Proyectos creados por ",
+    "explore": "Explorar Repos",
+    "specs": {
+      "cpu": "[ CARGA_CPU: 42% ]",
+      "mem": "[ ESTADO_MEM: ESTABLE ]",
+      "conn": "[ CONEXIÓN: CIFRADA ]",
+      "acc": "[ ACCESO: ADMIN_PÚBLICO ]"
+    }
+  },
+  "projects": {
+    "title": "Repositorios Centrales",
+    "showing": "Mostrando {{count}} instancias filtradas en el sistema",
+    "categories": {
+      "ALL": "TODOS",
+      "33XL SYSTEM": "33XL SYSTEM",
+      "ACADÊMICOS": "ACADÉMICOS",
+      "A.L.T": "A.L.T",
+      "JOGOS": "JUEGOS",
+      "OUTROS PROJETOS": "OTROS PROYECTOS",
+      "SITES CLIENTES": "SITIOS DE CLIENTES"
+    },
+    "list": {
+      "33xl-website": {
+        "name": "33XL SYSTEM WEBSITE",
+        "description": "Plataforma central y cuartel general digital del 33XL SYSTEM. Actuando como el núcleo orquestador de todos los ecosistemas, este portal consolida el dossier profesional de Cauan33XL, centraliza identidades visuales avanzadas y alberga una arquitectura modular de subproyectos desarrollados con tecnologías de vanguardia. Desarrollado con React 18, TypeScript y Tailwind v4, el proyecto demuestra un alto rendimiento a través de técnicas de lazy loading, enrutamiento dinámico e integración con API serverless, además de soporte multilingüe inteligente."
+      },
+      "ram": {
+        "name": "PROJETO R.A.M",
+        "description": "Repo Access Manager - Centro principal de acceso y documentación de todos mis proyectos."
+      },
+      "33xl-shop": {
+        "name": "33XL SHOP",
+        "description": "E-commerce de Afiliados. Escaparate inteligente y ultra estilizado centrado en la escalabilidad y el diseño inmersivo."
+      },
+      "secure-flag": {
+        "name": "SECURE FLAG CTF",
+        "description": "Plataforma de Capture The Flag centrada en la seguridad de la información."
+      },
+      "hydropush": {
+        "name": "HYDROPUSH APP",
+        "description": "Aplicación de monitorización y fomento de la hidratación."
+      },
+      "banco-sic-mundus": {
+        "name": "BANCO SIC MUNDUS",
+        "description": "Simulador bancario retro-futurista e inmersivo en C + WebAssembly + React 19, inspirado en la serie Dark."
+      },
+      "amond-3d": {
+        "name": "Amond 3D Engine",
+        "description": "Visor y plataforma de modelos 3D."
+      },
+      "lepus-fight": {
+        "name": "Lepus Fight Engine",
+        "description": "Juego de lucha desarrollado con TypeScript."
+      },
+      "trymon-os": {
+        "name": "TRYMON OS",
+        "description": "Sistema operativo experimental basado en web con una interfaz moderna."
+      },
+      "self-pandora": {
+        "name": "El Ser de Pandora",
+        "description": "Juego de plataformas 3D psicológico y abstracto centrado en la integración de la Sombra interior."
+      },
+      "zebrao-reino-da-quantidade": {
+        "name": "Zebrão: El Reino de la Cantidad",
+        "description": "Caja de arena extraña y metafísica híbrida en 2.5D/3D (Three.js + Phaser 3)."
+      },
+      "sycamore-valley": {
+        "name": "Sycamore Valley Game",
+        "description": "Experiencia de juego interactiva en el navegador."
+      },
+      "rei-das-mordidas": {
+        "name": "Rei das Mordidas",
+        "description": "Sistema de gestión y ventas para el sector alimentario."
+      },
+      "acai-top": {
+        "name": "Açaí Top Lanches",
+        "description": "Plataforma de entrega y menú digital para un bar de bocadillos."
+      }
+    }
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "contact": "Contacto",
+    "back": "Volver"
+  },
+  "project": {
+    "live_preview": "VISTA PREVIA //",
+    "github": "REPO GITHUB //",
+    "start_preview": "Iniciando Vista Previa Remota",
+    "preview_error": "Vista Previa No Disponible",
+    "preview_error_desc": "El entorno de simulación remota no está configurado para esta instancia. Acceda al enlace de producción directamente.",
+    "open_prod": "ABRIR EN PRODUCCIÓN",
+    "about": "Sobre el Proyecto",
+    "gallery": "Galería / Visuales",
+    "stack": "Tecnologías & Etiquetas",
+    "private": "PRIVADO",
+    "public": "PÚBLICO",
+    "access_repo": "Acceder al Repositorio",
+    "access_site": "Acceder al Sitio",
+    "reload": "Recargar",
+    "new_tab": "Nueva Pestaña",
+    "close": "Cerrar",
+    "starting": "Iniciando Vista Previa Remota",
+    "status": {
+      "active": "activo",
+      "archived": "archivado",
+      "in-progress": "en progreso"
+    }
+  },
+  "about": {
+    "title_page": "Sobre",
+    "subtitle_page": "Conoce al arquitecto detrás del código. Desarrollador enfocado en rendimiento, seguridad e interfaces de alto impacto visual.",
+    "whoami": "root@pr-am:~# whoami",
+    "name_label": "> NOMBRE:",
+    "status_label": "> ESTADO:",
+    "status_text": "Estudiante de ADS y Desarrollador de Software Independiente",
+    "objective_label": "> OBJETIVO:",
+    "objective_text": "Construir sistemas escalables que combinan estética inmersiva e ingeniería de software de alto rendimiento.",
+    "stack_title": "Stack Tecnológico",
+    "p1": "Desde la creación de simulaciones de SO en el navegador (Trymon OS) hasta el desarrollo de complejas arquitecturas de comercio electrónico sin servidor y juegos en TypeScript puro, mi enfoque siempre ha estado en la intersección del diseño premium y la lógica robusta.",
+    "p2": "Creo que el software no solo debe ser funcional, sino ofrecer una experiencia visceral. Por eso aplico la estética de la Web Rica, Glassmorphism y conceptos retro-punk en mis centros de desarrollo.",
+    "p3": "\"Cognoscere Et Creare\" - Conocer para poder crear. Este es el mantra que guía mi aprendizaje constante en Ciberseguridad, Arquitectura de Sistemas e Ingeniería Front-end.",
+    "focus": "Enfoque Principal"
+  },
+  "contact": {
+    "page_title": "Contacto",
+    "page_desc": "> Estableciendo conexión segura con la red primaria...",
+    "subtitle": "Independent Software Developer | IT Enthusiast & Student",
+    "linkedin": "Conectar en LinkedIn",
+    "github": "Explorar en GitHub",
+    "gitlab": "Explorar en GitLab"
+  }
+}

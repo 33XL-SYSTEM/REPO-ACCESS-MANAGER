@@ -1,0 +1,140 @@
+{
+  "hero": {
+    "terminal": "Terminal Instance: PR-AM-2026",
+    "title": "PROJECT",
+    "subtitle": "R.A.M",
+    "description1": "Repo Access Manager is the central core for accessing documentation and repositories of all my developments. A public hub for a distributed mind.",
+    "description2": "Projects created by ",
+    "explore": "Explore Repos",
+    "specs": {
+      "cpu": "[ CPU_LOAD: 42% ]",
+      "mem": "[ MEMORY_STATUS: STABLE ]",
+      "conn": "[ CONNECTION: ENCRYPTED ]",
+      "acc": "[ ACCESS_LEVEL: PUBLIC_ADMIN ]"
+    }
+  },
+  "projects": {
+    "title": "Core Repositories",
+    "showing": "Showing {{count}} filtered instances in the system",
+    "categories": {
+      "ALL": "ALL",
+      "33XL SYSTEM": "33XL SYSTEM",
+      "ACADÊMICOS": "ACADEMICS",
+      "A.L.T": "A.L.T",
+      "JOGOS": "GAMES",
+      "OUTROS PROJETOS": "OTHER PROJECTS",
+      "SITES CLIENTES": "CLIENT SITES"
+    },
+    "list": {
+      "33xl-website": {
+        "name": "33XL SYSTEM WEBSITE",
+        "description": "Core platform and digital headquarters of the 33XL SYSTEM. Acting as the orchestrating nucleus of all ecosystems, this portal consolidates Cauan33XL's professional dossier, centralizes advanced visual identities, and hosts a modular architecture of subprojects developed with cutting-edge technologies. Built with React 18, TypeScript, and Tailwind v4, the project demonstrates high performance through lazy loading techniques, dynamic routing, and serverless API integration, alongside smart multilingual support."
+      },
+      "ram": {
+        "name": "PROJETO R.A.M",
+        "description": "Repo Access Manager - Central hub for access and documentation of all my projects."
+      },
+      "33xl-shop": {
+        "name": "33XL SHOP",
+        "description": "Affiliate E-commerce. Smart and ultra-stylized showcase focused on scalability and immersive design."
+      },
+      "secure-flag": {
+        "name": "SECURE FLAG CTF",
+        "description": "Capture The Flag platform focused on information security."
+      },
+      "hydropush": {
+        "name": "HYDROPUSH APP",
+        "description": "Hydration monitoring and encouragement app."
+      },
+      "banco-sic-mundus": {
+        "name": "BANCO SIC MUNDUS",
+        "description": "Retro-futuristic and immersive banking simulator in C + WebAssembly + React 19, inspired by the series Dark."
+      },
+      "amond-3d": {
+        "name": "Amond 3D Engine",
+        "description": "3D model viewer and platform."
+      },
+      "lepus-fight": {
+        "name": "Lepus Fight Engine",
+        "description": "Fighting game developed with TypeScript."
+      },
+      "trymon-os": {
+        "name": "TRYMON OS",
+        "description": "Experimental web-based operating system with a modern interface."
+      },
+      "self-pandora": {
+        "name": "Pandora's Self",
+        "description": "Psychological and abstract 3D platform game focused on the integration of the inner Shadow."
+      },
+      "zebrao-reino-da-quantidade": {
+        "name": "Zebrão: The Kingdom of Quantity",
+        "description": "Strange and Metaphysical Sandbox hybrid in 2.5D/3D (Three.js + Phaser 3)."
+      },
+      "sycamore-valley": {
+        "name": "Sycamore Valley Game",
+        "description": "Interactive browser game experience."
+      },
+      "rei-das-mordidas": {
+        "name": "Rei das Mordidas",
+        "description": "Management and sales system for the food sector."
+      },
+      "acai-top": {
+        "name": "Açaí Top Lanches",
+        "description": "Delivery platform and digital menu for a snack bar."
+      }
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "back": "Back"
+  },
+  "project": {
+    "live_preview": "LIVE PREVIEW //",
+    "github": "GITHUB REPO //",
+    "start_preview": "Initiating Remote Preview",
+    "preview_error": "Preview Unavailable",
+    "preview_error_desc": "The remote simulation environment is not configured for this instance. Please access the production link directly.",
+    "open_prod": "OPEN IN PRODUCTION",
+    "about": "About the Project",
+    "gallery": "Gallery / Visuals",
+    "stack": "Stack & Tags",
+    "private": "PRIVATE",
+    "public": "PUBLIC",
+    "access_repo": "Access Repository",
+    "access_site": "Access Site",
+    "reload": "Reload",
+    "new_tab": "New Tab",
+    "close": "Close",
+    "starting": "Starting Remote Preview",
+    "status": {
+      "active": "active",
+      "archived": "archived",
+      "in-progress": "in progress"
+    }
+  },
+  "about": {
+    "title_page": "About",
+    "subtitle_page": "Meet the architect behind the code. Developer focused on performance, security, and high visual impact interfaces.",
+    "whoami": "root@pr-am:~# whoami",
+    "name_label": "> NAME:",
+    "status_label": "> STATUS:",
+    "status_text": "SAD Student & Independent Software Developer",
+    "objective_label": "> OBJECTIVE:",
+    "objective_text": "Build scalable systems that blend immersive aesthetics and high-performance software engineering.",
+    "stack_title": "Tech Stack",
+    "p1": "From creating OS simulations in the browser (Trymon OS) to developing complex serverless e-commerce architectures and pure TypeScript games, my focus has always been at the intersection of premium design and robust logic.",
+    "p2": "I believe software should not only be functional, but offer a visceral experience. That's why I apply Rich Web aesthetics, Glassmorphism, and retro-punk concepts in my development hubs.",
+    "p3": "\"Cognoscere Et Creare\" - To know in order to create. This is the mantra that guides my constant learning in Cybersecurity, Systems Architecture, and Front-end Engineering.",
+    "focus": "Primary Focus"
+  },
+  "contact": {
+    "page_title": "Contact",
+    "page_desc": "> Establishing secure connection with primary network...",
+    "subtitle": "Independent Software Developer | IT Enthusiast & Student",
+    "linkedin": "Connect on LinkedIn",
+    "github": "Explore on GitHub",
+    "gitlab": "Explore on GitLab"
+  }
+}

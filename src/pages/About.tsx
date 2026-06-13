@@ -2,18 +2,19 @@ import React from 'react';
 import { Terminal, Shield } from 'lucide-react';
 import { FaReact, FaNodeJs, FaRust } from 'react-icons/fa';
 import { SiTypescript, SiTailwindcss, SiNextdotjs, SiThreedotjs, SiC } from 'react-icons/si';
+import { useTranslation } from 'react-i18next';
 
 const About: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <div className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
       {/* Header */}
       <div className="mb-20">
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 uppercase">
-          Sobre
+          {t('about.title_page')}
         </h1>
-        <p className="text-xl text-white/50 max-w-2xl font-sans">
-          Conheça o arquiteto por trás do código. Desenvolvedor focado em performance, 
-          segurança e interfaces de alto impacto visual.
+        <p className="text-xl text-white/70 max-w-2xl font-sans">
+          {t('about.subtitle_page')}
         </p>
       </div>
 
@@ -28,7 +29,7 @@ const About: React.FC = () => {
                 <div className="w-3 h-3 rounded-full bg-white/20"></div>
                 <div className="w-3 h-3 rounded-full bg-white/20"></div>
               </div>
-              <span className="font-mono text-xs text-white/50 ml-4">root@pr-am:~# whoami</span>
+              <span className="font-mono text-xs text-white/70 ml-4">{t('about.whoami')}</span>
             </div>
             
             {/* Terminal Content */}
@@ -36,31 +37,27 @@ const About: React.FC = () => {
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 blur-3xl rounded-full"></div>
               
               <div className="flex gap-4 mb-6">
-                <Terminal className="text-white/40 shrink-0" />
+                <Terminal className="text-white/60 shrink-0" />
                 <div>
-                  <p className="text-white/80 mb-4">
-                    <span className="text-white font-bold">&gt; NOME:</span> Cauan Gabriel Matos Silva
+                  <p className="text-white mb-4">
+                    <span className="text-white font-bold">{t('about.name_label')}</span> Cauan Gabriel Matos Silva
                   </p>
-                  <p className="text-white/80 mb-4">
-                    <span className="text-white font-bold">&gt; STATUS:</span> Estudante de ADS & Desenvolvedor de Software Independente
+                  <p className="text-white mb-4">
+                    <span className="text-white font-bold">{t('about.status_label')}</span> {t('about.status_text')}
                   </p>
-                  <p className="text-white/80">
-                    <span className="text-white font-bold">&gt; OBJETIVO:</span> Construir sistemas escaláveis que mesclam estética imersiva e engenharia de software de alta performance.
+                  <p className="text-white">
+                    <span className="text-white font-bold">{t('about.objective_label')}</span> {t('about.objective_text')}
                   </p>
                 </div>
               </div>
 
               <div className="h-px w-full bg-white/10 my-8"></div>
 
-              <div className="prose prose-invert prose-p:text-white/70 max-w-none font-sans">
-                <p>
-                  Desde a criação de simulações de sistemas operacionais no navegador (Trymon OS) até o desenvolvimento de arquiteturas e-commerce serverless complexas e games em TypeScript puro, meu foco sempre esteve na interseção entre <strong>design premium</strong> e <strong>lógica robusta</strong>.
-                </p>
-                <p>
-                  Acredito que o software não deve ser apenas funcional, mas deve oferecer uma experiência visceral. Por isso, aplico conceitos de estética <em>Rich Web</em>, Glassmorphism, e retro-punk em meus hubs de desenvolvimento.
-                </p>
-                <p className="italic text-white/50 border-l-2 border-white/20 pl-4 mt-6">
-                  "Cognoscere Et Creare" - Conhecer para poder criar. Esse é o mantra que guia meu aprendizado constante em Cibersegurança, Arquitetura de Sistemas e Engenharia Front-end.
+              <div className="prose prose-invert prose-p:text-white/90 max-w-none font-sans">
+                <p>{t('about.p1')}</p>
+                <p>{t('about.p2')}</p>
+                <p className="italic text-white/70 border-l-2 border-white/20 pl-4 mt-6">
+                  {t('about.p3')}
                 </p>
               </div>
             </div>
@@ -72,24 +69,24 @@ const About: React.FC = () => {
           <div className="border border-white/10 p-6 bg-white/[0.02] backdrop-blur-sm relative group">
             <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <h3 className="font-mono text-sm tracking-widest uppercase mb-6 flex items-center gap-2">
-              <Shield size={16} /> Foco Primário
+              <Shield size={16} /> {t('about.focus')}
             </h3>
             <ul className="font-mono text-xs space-y-4 relative z-10">
               <li className="flex flex-col gap-1 border-b border-white/5 pb-3">
                 <span className="text-white font-bold">Front-end Engineering</span>
-                <span className="text-white/50">React, TypeScript, Tailwind</span>
+                <span className="text-white/70">React, TypeScript, Tailwind</span>
               </li>
               <li className="flex flex-col gap-1 border-b border-white/5 pb-3">
                 <span className="text-white font-bold">Systems & Architecture</span>
-                <span className="text-white/50">Serverless, Microservices</span>
+                <span className="text-white/70">Serverless, Microservices</span>
               </li>
               <li className="flex flex-col gap-1 border-b border-white/5 pb-3">
                 <span className="text-white font-bold">Cybersecurity</span>
-                <span className="text-white/50">CTF Environments, Forensics</span>
+                <span className="text-white/70">CTF Environments, Forensics</span>
               </li>
               <li className="flex flex-col gap-1">
                 <span className="text-white font-bold">Game Development</span>
-                <span className="text-white/50">Phaser 3, Engine Design</span>
+                <span className="text-white/70">Phaser 3, Engine Design</span>
               </li>
             </ul>
           </div>
@@ -99,7 +96,7 @@ const About: React.FC = () => {
       {/* Tech Stack Grid */}
       <div className="mt-20 border-t border-white/10 pt-20">
         <h2 className="text-3xl font-bold mb-12 uppercase tracking-tighter text-center">
-          Stack Tecnológica
+          {t('about.stack_title')}
         </h2>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import { GitBranch, ExternalLink, ArrowLeft, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import type { Project } from '../data/projects';
 import { usePreview } from '../context/PreviewContext';
+import { useTranslation } from 'react-i18next';
 
 interface ProjectDetailProps {
   project: Project;
@@ -12,7 +13,10 @@ interface ProjectDetailProps {
 
 const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
   const { openPreview } = usePreview();
+  const { t, i18n } = useTranslation();
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [markdownContent, setMarkdownContent] = useState<string>('');
+  const [loadingContent, setLoadingContent] = useState<boolean>(true);
 
   const handleNext = React.useCallback(() => {
     if (project.gallery && lightboxIndex !== null) {
@@ -47,6 +51,32 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [lightboxIndex, handleNext, handlePrev]);
 
+  useEffect(() => {
+    let isMounted = true;
+    const loadMarkdown = async () => {
+      setLoadingContent(true);
+      try {
+        let module;
+        try {
+          module = await import(`../data/descriptions/${i18n.language.split('-')[0]}/${project.id}.md?raw`);
+        } catch (e) {
+          module = await import(`../data/descriptions/pt-BR/${project.id}.md?raw`);
+        }
+        if (isMounted) {
+          setMarkdownContent(module.default);
+          setLoadingContent(false);
+        }
+      } catch (err) {
+        if (isMounted) {
+          setMarkdownContent(t(`projects.list.${project.id}.description`, project.description));
+          setLoadingContent(false);
+        }
+      }
+    };
+    loadMarkdown();
+    return () => { isMounted = false; };
+  }, [project.id, i18n.language, t, project.description]);
+
   return (
     <div className="fixed inset-0 z-50 bg-brand-black/95 backdrop-blur-xl overflow-y-auto overscroll-contain">
       <div className="scanline"></div>
@@ -56,24 +86,24 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
           onClick={onBack}
           className="fixed top-8 left-8 md:absolute md:top-0 md:left-[-4rem] p-2 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono uppercase text-xs tracking-widest z-50 bg-brand-black flex items-center gap-2 group"
         >
-          <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" /> Voltar
+          <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" /> {t('nav.back')}
         </button>
 
         <div className="flex flex-col gap-8">
           <div className="border-b border-white/10 pb-8">
             <div className="flex items-center gap-4 mb-4">
-              <span className="text-xs font-mono text-white/40 uppercase tracking-widest border border-white/10 px-2 py-1">
-                {project.category}
+              <span className="text-xs font-mono text-white/60 uppercase tracking-widest border border-white/10 px-2 py-1">
+                {t(`projects.categories.${project.category}`, project.category)}
               </span>
               {project.isPrivate && (
-                <span className="text-xs font-mono text-white/40 uppercase tracking-widest border border-white/10 px-2 py-1">
-                  Private
+                <span className="text-xs font-mono text-white/60 uppercase tracking-widest border border-white/10 px-2 py-1">
+                  {t('project.private', 'Private')}
                 </span>
               )}
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">
-              {project.name}
+              {t(`projects.list.${project.id}.name`, project.name)}
             </h1>
             
             <div className="flex flex-wrap gap-6 mt-8 p-6 border border-white/10 bg-white/[0.02] relative group">
@@ -86,7 +116,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
                   className="flex-1 flex items-center justify-center gap-3 bg-white text-black px-8 py-4 font-mono font-bold uppercase tracking-widest hover:invert transition-all duration-300 text-base"
                 >
                   <GitBranch size={20} />
-                  Acessar Repositório
+                  {t('project.access_repo')}
                 </a>
               )}
               {project.demoUrl && (
@@ -95,23 +125,26 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
                   className="flex-1 flex items-center justify-center gap-3 border-2 border-white/20 px-8 py-4 font-mono font-bold uppercase tracking-widest hover:border-white hover:bg-white/5 transition-all duration-300 text-base cursor-pointer"
                 >
                   <ExternalLink size={20} />
-                  Acessar Site
+                  {t('project.access_site')}
                 </button>
               )}
             </div>
           </div>
 
-          <div className="prose prose-invert prose-p:text-white/70 prose-headings:text-white prose-a:text-white prose-a:underline-offset-4 hover:prose-a:text-white/70 prose-pre:bg-white/5 prose-pre:border prose-pre:border-white/10 max-w-none font-sans">
-            {project.fullDescription ? (
-              <ReactMarkdown>{project.fullDescription}</ReactMarkdown>
+          <div className="prose prose-invert prose-p:text-white/90 prose-headings:text-white prose-a:text-white prose-a:underline-offset-4 hover:prose-a:text-white/90 prose-pre:bg-white/5 prose-pre:border prose-pre:border-white/10 max-w-none font-sans">
+            {loadingContent ? (
+              <div className="flex items-center gap-4 text-white/50">
+                <div className="w-6 h-6 border-2 border-white/20 border-t-white rounded-full animate-spin"></div>
+                <span className="font-mono text-xs tracking-widest uppercase">Carregando dados do projeto...</span>
+              </div>
             ) : (
-              <p className="text-xl text-white/50 italic">{project.description}</p>
+              <ReactMarkdown>{markdownContent}</ReactMarkdown>
             )}
           </div>
           
           {project.gallery && project.gallery.length > 0 && (
             <div className="border-t border-white/10 pt-8 mt-8">
-              <h3 className="font-mono uppercase tracking-widest text-sm text-white/50 mb-6">Galeria / Visuals</h3>
+              <h3 className="font-mono uppercase tracking-widest text-sm text-white/70 mb-6">{t('project.gallery')}</h3>
               <div className="flex flex-col gap-8">
                 {project.gallery.map((imgSrc, idx) => (
                   <div 
@@ -132,10 +165,10 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
           )}
 
           <div className="border-t border-white/10 pt-8 mt-8">
-            <h3 className="font-mono uppercase tracking-widest text-sm text-white/50 mb-4">Stack & Tags</h3>
+            <h3 className="font-mono uppercase tracking-widest text-sm text-white/70 mb-4">{t('project.stack')}</h3>
             <div className="flex flex-wrap gap-3">
               {project.tags.map(tag => (
-                <span key={tag} className="text-xs font-mono bg-white/5 px-3 py-1 rounded-sm text-white/80 border border-white/10">
+                <span key={tag} className="text-xs font-mono bg-white/5 px-3 py-1 rounded-sm text-white border border-white/10">
                   {tag}
                 </span>
               ))}
@@ -152,14 +185,14 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
         >
           <button 
             onClick={(e) => { e.stopPropagation(); setLightboxIndex(null); }}
-            className="fixed top-6 right-6 md:top-8 md:right-8 p-2 text-white/50 hover:text-white hover:bg-white/10 rounded-full transition-all z-[10000]"
+            className="fixed top-6 right-6 md:top-8 md:right-8 p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-all z-[10000]"
           >
             <X size={32} />
           </button>
           
           <button 
             onClick={(e) => { e.stopPropagation(); handlePrev(); }}
-            className="fixed left-2 md:left-8 p-2 text-white/50 hover:text-white hover:bg-white/10 rounded-full transition-all z-[10000]"
+            className="fixed left-2 md:left-8 p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-all z-[10000]"
           >
             <ChevronLeft size={48} />
           </button>
@@ -173,12 +206,12 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
           
           <button 
             onClick={(e) => { e.stopPropagation(); handleNext(); }}
-            className="fixed right-2 md:right-8 p-2 text-white/50 hover:text-white hover:bg-white/10 rounded-full transition-all z-[10000]"
+            className="fixed right-2 md:right-8 p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-all z-[10000]"
           >
             <ChevronRight size={48} />
           </button>
           
-          <div className="fixed bottom-6 font-mono text-xs tracking-widest text-white/50 z-[10000]">
+          <div className="fixed bottom-6 font-mono text-xs tracking-widest text-white/70 z-[10000]">
             {lightboxIndex + 1} / {project.gallery.length}
           </div>
         </div>,

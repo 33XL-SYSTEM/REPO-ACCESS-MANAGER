@@ -35,7 +35,7 @@ const MusicPlayer: React.FC = () => {
 
       <div className="flex items-center justify-between mt-2">
         <div className="flex flex-col">
-          <span className="text-[11px] font-mono text-white/50 uppercase tracking-widest mb-1">
+          <span className="text-[11px] font-mono text-white/70 uppercase tracking-widest mb-1">
             Now Playing
           </span>
           <span className="text-base font-bold text-white tracking-wide">
@@ -61,7 +61,7 @@ const MusicPlayer: React.FC = () => {
           style={{ background: `linear-gradient(to right, white ${progress || 0}%, rgba(255, 255, 255, 0.2) ${progress || 0}%)` }}
           className="w-full h-1 appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-2.5 [&::-webkit-slider-thumb]:h-2.5 [&::-webkit-slider-thumb]:bg-white rounded-full transition-all"
         />
-        <div className="flex justify-between text-[9px] font-mono text-white/50 px-0.5">
+        <div className="flex justify-between text-[9px] font-mono text-white/70 px-0.5">
           <span>{formatTime(currentTime)}</span>
           <span>{formatTime(duration)}</span>
         </div>
@@ -70,13 +70,13 @@ const MusicPlayer: React.FC = () => {
       <div className="flex items-center justify-between mt-2">
         <button 
           onClick={toggleLoop} 
-          className={`p-1.5 transition-colors ${isLooping ? 'text-white' : 'text-white/40 hover:text-white/80'}`}
+          className={`p-1.5 transition-colors ${isLooping ? 'text-white' : 'text-white/60 hover:text-white'}`}
         >
           <Repeat size={16} />
         </button>
 
         <div className="flex items-center gap-6">
-          <button onClick={prevTrack} className="text-white/70 hover:text-white transition-colors">
+          <button onClick={prevTrack} className="text-white/90 hover:text-white transition-colors">
             <SkipBack size={20} />
           </button>
           
@@ -87,7 +87,7 @@ const MusicPlayer: React.FC = () => {
             {isPlaying ? <Pause size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" className="ml-0.5" />}
           </button>
           
-          <button onClick={nextTrack} className="text-white/70 hover:text-white transition-colors">
+          <button onClick={nextTrack} className="text-white/90 hover:text-white transition-colors">
             <SkipForward size={20} />
           </button>
         </div>
