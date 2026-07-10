@@ -1,5 +1,6 @@
-import React from 'react';
-import { Play, Pause, SkipBack, SkipForward, Repeat } from 'lucide-react';
+import React, { useState } from 'react';
+import { Play, Pause, SkipBack, SkipForward, Repeat, Rewind, ListMusic } from 'lucide-react';
+import PlaylistManagerModal from './PlaylistManagerModal';
 import { useMusic } from '../context/MusicContext';
 
 const MusicPlayer: React.FC = () => {
@@ -15,7 +16,11 @@ const MusicPlayer: React.FC = () => {
     currentTime,
     duration,
     seek,
+    isReversed,
+    toggleReverse,
   } = useMusic();
+
+  const [isPlaylistOpen, setIsPlaylistOpen] = useState(false);
 
   const formatTime = (time: number) => {
     if (!time || isNaN(time)) return '0:00';
@@ -38,16 +43,26 @@ const MusicPlayer: React.FC = () => {
           <span className="text-[11px] font-mono text-white/70 uppercase tracking-widest mb-1">
             Now Playing
           </span>
-          <span className="text-base font-bold text-white tracking-wide">
+          <span className="text-base font-bold text-white tracking-wide truncate max-w-[200px]">
             {currentTrack.title}
           </span>
         </div>
         
-        {/* Animated equalizer bars when playing */}
-        <div className="flex gap-1 items-end h-4">
-          <div className={`w-1 bg-white/60 rounded-t-sm transition-all duration-300 ${isPlaying ? 'h-full animate-pulse' : 'h-1'}`}></div>
-          <div className={`w-1 bg-white/60 rounded-t-sm transition-all duration-300 ${isPlaying ? 'h-3 animate-pulse delay-75' : 'h-1'}`}></div>
-          <div className={`w-1 bg-white/60 rounded-t-sm transition-all duration-300 ${isPlaying ? 'h-2 animate-pulse delay-150' : 'h-1'}`}></div>
+        <div className="flex items-center gap-4">
+          <button 
+            onClick={() => setIsPlaylistOpen(true)} 
+            className="p-1.5 bg-white/5 hover:bg-white/10 rounded-md text-white/70 hover:text-white transition-all shadow-[0_0_10px_rgba(255,255,255,0.02)] border border-white/5" 
+            title="Open Playlist Manager"
+          >
+            <ListMusic size={16} />
+          </button>
+          
+          {/* Animated equalizer bars when playing */}
+          <div className="flex gap-1 items-end h-4">
+            <div className={`w-1 bg-white/60 rounded-t-sm transition-all duration-300 ${isPlaying ? 'h-full animate-pulse' : 'h-1'}`}></div>
+            <div className={`w-1 bg-white/60 rounded-t-sm transition-all duration-300 ${isPlaying ? 'h-3 animate-pulse delay-75' : 'h-1'}`}></div>
+            <div className={`w-1 bg-white/60 rounded-t-sm transition-all duration-300 ${isPlaying ? 'h-2 animate-pulse delay-150' : 'h-1'}`}></div>
+          </div>
         </div>
       </div>
 
@@ -92,8 +107,16 @@ const MusicPlayer: React.FC = () => {
           </button>
         </div>
 
-        <div className="w-[16px]"></div> {/* Spacer to balance the loop button */}
+        <button 
+          onClick={toggleReverse} 
+          className={`p-1.5 transition-colors ${isReversed ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]' : 'text-white/60 hover:text-white'}`}
+          title="Play Backwards"
+        >
+          <Rewind size={16} />
+        </button>
       </div>
+
+      <PlaylistManagerModal isOpen={isPlaylistOpen} onClose={() => setIsPlaylistOpen(false)} />
     </div>
   );
 };

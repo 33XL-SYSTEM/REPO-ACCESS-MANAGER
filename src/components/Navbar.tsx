@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { LayoutGrid, TerminalSquare, Mail, Sun, Moon } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { LayoutGrid, TerminalSquare, Heart, Sun, Moon, Box, Search } from 'lucide-react';
 import { FiGithub } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -11,6 +11,19 @@ const Navbar: React.FC = () => {
   const [isLightMode, setIsLightMode] = useState<boolean>(() => {
     return localStorage.getItem('theme') === 'light';
   });
+  const [headerSearch, setHeaderSearch] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (headerSearch.trim()) {
+      navigate(`/?q=${encodeURIComponent(headerSearch)}`);
+      setTimeout(() => {
+        document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+      setHeaderSearch('');
+    }
+  };
 
   useEffect(() => {
     if (isLightMode) {
@@ -43,15 +56,28 @@ const Navbar: React.FC = () => {
         <Link to="/" className="hover:text-white transition-colors flex items-center gap-1.5">
           <LayoutGrid size={14} className="hidden sm:block" /> {t('nav.home', 'Projetos')}
         </Link>
+        <Link to="/3d" className="hover:text-white transition-colors flex items-center gap-1.5">
+          <Box size={14} className="hidden sm:block" /> {t('nav.3d', 'Modo 3D')}
+        </Link>
         <Link to="/about" className="hover:text-white transition-colors flex items-center gap-1.5">
           <TerminalSquare size={14} className="hidden sm:block" /> {t('nav.about', 'Sobre')}
         </Link>
-        <Link to="/contact" className="hover:text-white transition-colors flex items-center gap-1.5">
-          <Mail size={14} className="hidden sm:block" /> {t('nav.contact', 'Contato')}
+        <Link to="/support" className="hover:text-white transition-colors flex items-center gap-1.5 uppercase cursor-pointer">
+          <Heart size={14} className="hidden sm:block text-red-500" /> {t('nav.support', 'Apoiar')}
         </Link>
       </div>
       
-      <div className="hidden sm:flex items-center gap-4">
+      <div className="hidden md:flex items-center gap-4">
+        <form onSubmit={handleSearch} className="relative group hidden lg:block">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-white/40 group-focus-within:text-white transition-colors" size={14} />
+          <input 
+            type="text" 
+            value={headerSearch}
+            onChange={(e) => setHeaderSearch(e.target.value)}
+            placeholder="Search..."
+            className="bg-brand-black border border-white/20 focus:border-white/50 pl-9 pr-4 py-1.5 text-white font-mono text-xs outline-none transition-all w-48 focus:w-64 uppercase tracking-widest placeholder:text-white/30"
+          />
+        </form>
         <button 
           onClick={toggleTheme}
           className="w-10 h-10 flex items-center justify-center border border-white/20 text-white/60 hover:bg-white hover:text-black hover:border-white transition-colors"

@@ -27,9 +27,22 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, isHorizonta
             {t(`projects.list.${project.id}.name`, project.name)}
           </h3>
             </div>
-            <span className="px-2 py-0.5 border border-white/20 text-[10px] font-mono uppercase text-white/60 whitespace-nowrap">
-              {project.isPrivate ? t('project.private', 'Privado') : t('project.public', 'Público')}
-            </span>
+            <div className="flex gap-2 items-start flex-nowrap shrink-0 ml-4">
+              {project.hasMixedVisibility ? (
+                <>
+                  <span className="px-2 py-0.5 border border-white/20 text-[10px] font-mono uppercase text-white/60 whitespace-nowrap">
+                    {t('project.public', 'Público')}
+                  </span>
+                  <span className="px-2 py-0.5 border border-white/20 text-[10px] font-mono uppercase text-white/60 whitespace-nowrap">
+                    {t('project.private', 'Privado')}
+                  </span>
+                </>
+              ) : (
+                <span className="px-2 py-0.5 border border-white/20 text-[10px] font-mono uppercase text-white/60 whitespace-nowrap">
+                  {project.isPrivate ? t('project.private', 'Privado') : t('project.public', 'Público')}
+                </span>
+              )}
+            </div>
           </div>
           
           <p className="text-white/80 text-[15px] mt-2 font-sans line-clamp-3">

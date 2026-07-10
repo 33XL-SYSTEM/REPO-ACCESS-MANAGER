@@ -1,19 +1,88 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useMusic } from '../context/MusicContext';
 
 const VinylSpinner: React.FC = () => {
-  const { isPlaying } = useMusic();
+  const { isPlaying, setIsScrubbing, scrub, isReversed } = useMusic();
+  
+  const [isDragging, setIsDragging] = useState(false);
+  const discRef = useRef<HTMLDivElement>(null);
+  const rotationRef = useRef(0);
+  const lastAngleRef = useRef<number | null>(null);
+  const centerRef = useRef<{ x: number; y: number } | null>(null);
+  const animationRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (isPlaying && !isDragging) {
+      let lastTime = performance.now();
+      const loop = (time: number) => {
+        const delta = time - lastTime;
+        lastTime = time;
+        const speed = isReversed ? -30 : 30; // 30 deg/sec
+        rotationRef.current = (rotationRef.current + (speed * delta) / 1000) % 360;
+        if (discRef.current) discRef.current.style.transform = `rotate(${rotationRef.current}deg)`;
+        animationRef.current = requestAnimationFrame(loop);
+      };
+      animationRef.current = requestAnimationFrame(loop);
+      return () => {
+        if (animationRef.current) cancelAnimationFrame(animationRef.current);
+      };
+    }
+  }, [isPlaying, isDragging, isReversed]);
+
+  const handlePointerDown = (e: React.PointerEvent) => {
+    if (!discRef.current) return;
+    setIsDragging(true);
+    setIsScrubbing(true);
+    e.currentTarget.setPointerCapture(e.pointerId);
+
+    const rect = discRef.current.getBoundingClientRect();
+    centerRef.current = {
+      x: rect.left + rect.width / 2,
+      y: rect.top + rect.height / 2
+    };
+
+    const angle = Math.atan2(e.clientY - centerRef.current.y, e.clientX - centerRef.current.x) * (180 / Math.PI);
+    lastAngleRef.current = angle;
+  };
+
+  const handlePointerMove = (e: React.PointerEvent) => {
+    if (!isDragging || !centerRef.current || lastAngleRef.current === null) return;
+
+    const angle = Math.atan2(e.clientY - centerRef.current.y, e.clientX - centerRef.current.x) * (180 / Math.PI);
+    let deltaAngle = angle - lastAngleRef.current;
+
+    if (deltaAngle > 180) deltaAngle -= 360;
+    if (deltaAngle < -180) deltaAngle += 360;
+
+    rotationRef.current = (rotationRef.current + deltaAngle) % 360;
+    if (discRef.current) {
+      discRef.current.style.transform = `rotate(${rotationRef.current}deg)`;
+    }
+
+    // Scrub: 10 seconds of audio per 360 degree rotation
+    const deltaSeconds = deltaAngle * (10 / 360);
+    scrub(deltaSeconds);
+
+    lastAngleRef.current = angle;
+  };
+
+  const handlePointerUp = (e: React.PointerEvent) => {
+    setIsDragging(false);
+    setIsScrubbing(false);
+    e.currentTarget.releasePointerCapture(e.pointerId);
+    lastAngleRef.current = null;
+  };
   
   const orbitItems = [
-    "SECURE-FLAG",
-    "HYDROPUSH",
-    "AMOND 3D",
-    "TRYMON OS",
-    "LEPUS FIGHT"
+    "33XL SYSTEM",
+    "CAUAN33XL",
+    "ENGINES",
+    "A.L.T",
+    "JOGOS"
   ];
 
   return (
-    <div className="relative w-[450px] h-[450px] flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity duration-500">
+    <div className="relative w-[450px] h-[450px] flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity duration-500 select-none">
       
       {/* Outer Glow / Ambient Lighting */}
       <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 blur-[60px] rounded-full"></div>
@@ -21,8 +90,13 @@ const VinylSpinner: React.FC = () => {
 
       {/* Main Vinyl Disc - Spinning */}
       <div 
-        className="absolute w-[340px] h-[340px] rounded-full border border-white/20 animate-[spin_12s_linear_infinite] flex items-center justify-center bg-gradient-to-br from-[#111] to-[#050505] shadow-[0_0_60px_rgba(255,255,255,0.05),inset_0_0_25px_rgba(255,255,255,0.05)]"
-        style={{ animationPlayState: isPlaying ? 'running' : 'paused' }}
+        ref={discRef}
+        className={`absolute w-[340px] h-[340px] rounded-full border border-white/20 flex items-center justify-center bg-gradient-to-br from-[#111] to-[#050505] shadow-[0_0_60px_rgba(255,255,255,0.05),inset_0_0_25px_rgba(255,255,255,0.05)] ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+        style={{ touchAction: 'none' }}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
+        onPointerCancel={handlePointerUp}
       >
         {/* Vinyl Grooves */}
         <div className="absolute w-[300px] h-[300px] rounded-full border border-[#fff]/10 border-dashed opacity-50"></div>
@@ -39,7 +113,7 @@ const VinylSpinner: React.FC = () => {
 
       {/* Orbiting Tracks */}
       <div 
-        className="absolute inset-0 animate-[spin_25s_linear_infinite]"
+        className={`absolute inset-0 animate-[spin_25s_linear_infinite] pointer-events-none ${isReversed ? '[animation-direction:reverse]' : ''}`}
         style={{ animationPlayState: isPlaying ? 'running' : 'paused' }}
       >
         {orbitItems.map((item, i) => {

@@ -14,13 +14,15 @@
     }
   },
   "projects": {
-    "title": "Core Repositories",
+    "title": "Core R.A.M Repositories",
     "showing": "Showing {{count}} filtered instances in the system",
     "categories": {
       "ALL": "ALL",
       "33XL SYSTEM": "33XL SYSTEM",
-      "ACADÊMICOS": "ACADEMICS",
+      "CAUAN33XL": "CAUAN33XL",
+      "ACADÊMICOS": "ACADEMIC",
       "A.L.T": "A.L.T",
+      "ENGINES": "ENGINES",
       "JOGOS": "GAMES",
       "OUTROS PROJETOS": "OTHER PROJECTS",
       "SITES CLIENTES": "CLIENT SITES"
@@ -88,6 +90,7 @@
     "home": "Home",
     "about": "About",
     "contact": "Contact",
+    "support": "Support",
     "back": "Back"
   },
   "project": {
@@ -116,19 +119,20 @@
     }
   },
   "about": {
-    "title_page": "About",
-    "subtitle_page": "Meet the architect behind the code. Developer focused on performance, security, and high visual impact interfaces.",
-    "whoami": "root@pr-am:~# whoami",
-    "name_label": "> NAME:",
-    "status_label": "> STATUS:",
-    "status_text": "SAD Student & Independent Software Developer",
-    "objective_label": "> OBJECTIVE:",
-    "objective_text": "Build scalable systems that blend immersive aesthetics and high-performance software engineering.",
-    "stack_title": "Tech Stack",
-    "p1": "From creating OS simulations in the browser (Trymon OS) to developing complex serverless e-commerce architectures and pure TypeScript games, my focus has always been at the intersection of premium design and robust logic.",
-    "p2": "I believe software should not only be functional, but offer a visceral experience. That's why I apply Rich Web aesthetics, Glassmorphism, and retro-punk concepts in my development hubs.",
-    "p3": "\"Cognoscere Et Creare\" - To know in order to create. This is the mantra that guides my constant learning in Cybersecurity, Systems Architecture, and Front-end Engineering.",
-    "focus": "Primary Focus"
+    "title_page": "About R.A.M",
+    "subtitle_page": "The Repo Access Manager (R.A.M) acts as the central neuron of the entire 33XL SYSTEM ecosystem. It is a scalable infrastructure meticulously designed to index, organize, and provide unrestricted access to all our developments, research branches, and proprietary engines in an immersive way.",
+    "whoami": "system@33xl:~# ./ram --execute --verbose",
+    "name_label": "[SYS_ID]:",
+    "system_name": "Repo Access Manager (R.A.M)",
+    "status_label": "[OP_STATUS]:",
+    "status_text": "Integration Kernel & 33XL Global Distributor",
+    "objective_label": "[DIRECTIVE]:",
+    "objective_text": "Orchestrate multiple development ecosystems — spanning microservices, graphic engines, interactive simulations, and web applications — within a brutalist matrix of ultra-high performance and low latency.",
+    "stack_title": "Stack & Architecture",
+    "p1": "Project R.A.M was conceived to solve a complex architectural paradox: converging the vast and fragmented repository network of 33XL SYSTEM (academic projects, commercial products, private experimental codes, and custom engines) into a unified, scalable, and instant-access interface.",
+    "p2": "Anchored in the visual identity of digital brutalism, the system rejects unnecessary abstractions. Through monospaced typography, high-contrast vectors, and cyber-industrial architecture, the interface demands absolute focus, offering a raw, immersive, and responsive navigation experience.",
+    "p3": "\"Cognoscere Et Creare\" — 33XL SYSTEM is not just a brand, but a distributed logical entity. We build autonomous and modular tools that communicate with each other, driven by our relentless doctrine: robust code, asynchronous security, and state-of-the-art design.",
+    "focus": "33XL Modules"
   },
   "contact": {
     "page_title": "Contact",
@@ -137,5 +141,24 @@
     "linkedin": "Connect on LinkedIn",
     "github": "Explore on GitHub",
     "gitlab": "Explore on GitLab"
+  },
+  "playlist": {
+    "title": "R.A.M PLAYLIST",
+    "native_folder": "R.A.M System Tracks",
+    "imported_folder": "Imported Tracks",
+    "create_category_placeholder": "Category name...",
+    "create_category_title": "Create Category",
+    "delete_folder_title": "Delete Folder (Tracks will move to Imported)",
+    "empty_folder": "Empty Folder",
+    "upload_audio": "Upload Local Audio (.mp3, .wav)",
+    "enable_category": "Enable Category",
+    "disable_category": "Disable Category",
+    "move_to_folder": "Move to Folder",
+    "delete_track": "Delete Track",
+    "hide_track": "Hide Track (Native)",
+    "import_audio": "IMPORT AUDIO",
+    "full": "FULL (33/33)",
+    "tracks_loaded": "Tracks Loaded",
+    "playing_now": "Playing Now"
   }
 }

@@ -95,9 +95,18 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
               <span className="text-xs font-mono text-white/60 uppercase tracking-widest border border-white/10 px-2 py-1">
                 {t(`projects.categories.${project.category}`, project.category)}
               </span>
-              {project.isPrivate && (
+              {project.hasMixedVisibility ? (
+                <>
+                  <span className="text-xs font-mono text-white/60 uppercase tracking-widest border border-white/10 px-2 py-1">
+                    {t('project.public', 'Público')}
+                  </span>
+                  <span className="text-xs font-mono text-white/60 uppercase tracking-widest border border-white/10 px-2 py-1">
+                    {t('project.private', 'Privado')}
+                  </span>
+                </>
+              ) : project.isPrivate && (
                 <span className="text-xs font-mono text-white/60 uppercase tracking-widest border border-white/10 px-2 py-1">
-                  {t('project.private', 'Private')}
+                  {t('project.private', 'Privado')}
                 </span>
               )}
             </div>

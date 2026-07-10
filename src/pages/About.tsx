@@ -40,7 +40,7 @@ const About: React.FC = () => {
                 <Terminal className="text-white/60 shrink-0" />
                 <div>
                   <p className="text-white mb-4">
-                    <span className="text-white font-bold">{t('about.name_label')}</span> Cauan Gabriel Matos Silva
+                    <span className="text-white font-bold">{t('about.name_label')}</span> {t('about.system_name', 'Repo Access Manager (R.A.M)')}
                   </p>
                   <p className="text-white mb-4">
                     <span className="text-white font-bold">{t('about.status_label')}</span> {t('about.status_text')}
@@ -73,20 +73,20 @@ const About: React.FC = () => {
             </h3>
             <ul className="font-mono text-xs space-y-4 relative z-10">
               <li className="flex flex-col gap-1 border-b border-white/5 pb-3">
-                <span className="text-white font-bold">Front-end Engineering</span>
-                <span className="text-white/70">React, TypeScript, Tailwind</span>
+                <span className="text-white font-bold">Web Applications</span>
+                <span className="text-white/70">React, TypeScript, Next.js, Vite</span>
               </li>
               <li className="flex flex-col gap-1 border-b border-white/5 pb-3">
-                <span className="text-white font-bold">Systems & Architecture</span>
-                <span className="text-white/70">Serverless, Microservices</span>
+                <span className="text-white font-bold">Game & 3D Engines</span>
+                <span className="text-white/70">Phaser, Three.js, WebGL</span>
               </li>
               <li className="flex flex-col gap-1 border-b border-white/5 pb-3">
-                <span className="text-white font-bold">Cybersecurity</span>
-                <span className="text-white/70">CTF Environments, Forensics</span>
+                <span className="text-white font-bold">Backend & Systems</span>
+                <span className="text-white/70">Node.js, Rust, Serverless</span>
               </li>
               <li className="flex flex-col gap-1">
-                <span className="text-white font-bold">Game Development</span>
-                <span className="text-white/70">Phaser 3, Engine Design</span>
+                <span className="text-white font-bold">Core Infrastructure</span>
+                <span className="text-white/70">33XL Work Machine, RAM</span>
               </li>
             </ul>
           </div>

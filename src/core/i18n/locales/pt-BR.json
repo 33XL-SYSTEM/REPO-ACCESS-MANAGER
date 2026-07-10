@@ -3,7 +3,7 @@
     "terminal": "Terminal Instance: PR-AM-2026",
     "title": "PROJETO",
     "subtitle": "R.A.M",
-    "description1": "Repo Access Manager é o núcleo central de acesso à documentação e repositórios de todos os meus desenvolvimentos. Um hub público para uma mente distribuída.",
+    "description1": "Repo Access Manager é o núcleo central de acesso à documentação e repositórios de todos os meus desenvolvimentos. Um hub público para uma mente distribuída. Explore enquanto deixa o Disco tocar músicas ",
     "description2": "Projetos criados por ",
     "explore": "Explorar Repos",
     "specs": {
@@ -14,13 +14,15 @@
     }
   },
   "projects": {
-    "title": "Core Repositories",
+    "title": "Core R.A.M Repositories",
     "showing": "Mostrando {{count}} instâncias filtradas no sistema",
     "categories": {
       "ALL": "TODOS",
       "33XL SYSTEM": "33XL SYSTEM",
+      "CAUAN33XL": "CAUAN33XL",
       "ACADÊMICOS": "ACADÊMICOS",
       "A.L.T": "A.L.T",
+      "ENGINES": "ENGINES",
       "JOGOS": "JOGOS",
       "OUTROS PROJETOS": "OUTROS PROJETOS",
       "SITES CLIENTES": "SITES CLIENTES"
@@ -88,10 +90,10 @@
     "home": "Home",
     "about": "Sobre",
     "contact": "Contato",
+    "support": "Apoiar",
     "back": "Voltar"
   },
   "project": {
-
     "live_preview": "LIVE PREVIEW //",
     "github": "GITHUB REPO //",
     "start_preview": "Iniciando Preview Remoto",
@@ -116,19 +118,20 @@
     }
   },
   "about": {
-    "title_page": "Sobre",
-    "subtitle_page": "Conheça o arquiteto por trás do código. Desenvolvedor focado em performance, segurança e interfaces de alto impacto visual.",
-    "whoami": "root@pr-am:~# whoami",
-    "name_label": "> NOME:",
-    "status_label": "> STATUS:",
-    "status_text": "Estudante de ADS & Desenvolvedor de Software Independente",
-    "objective_label": "> OBJETIVO:",
-    "objective_text": "Construir sistemas escaláveis que mesclam estética imersiva e engenharia de software de alta performance.",
-    "stack_title": "Stack Tecnológica",
-    "p1": "Desde a criação de simulações de sistemas operacionais no navegador (Trymon OS) até o desenvolvimento de arquiteturas e-commerce serverless complexas e games em TypeScript puro, meu foco sempre esteve na interseção entre design premium e lógica robusta.",
-    "p2": "Acredito que o software não deve ser apenas funcional, mas deve oferecer uma experiência visceral. Por isso, aplico conceitos de estética Rich Web, Glassmorphism, e retro-punk em meus hubs de desenvolvimento.",
-    "p3": "\"Cognoscere Et Creare\" - Conhecer para poder criar. Esse é o mantra que guia meu aprendizado constante em Cibersegurança, Arquitetura de Sistemas e Engenharia Front-end.",
-    "focus": "Foco Primário"
+    "title_page": "Sobre o R.A.M",
+    "subtitle_page": "O Repo Access Manager (R.A.M) atua como o neurônio central de todo o ecossistema da 33XL SYSTEM. Trata-se de uma infraestrutura escalável, projetada milimetricamente para indexar, organizar e fornecer acesso irrestrito a todos os nossos desenvolvimentos, ramificações de pesquisa e motores proprietários de forma imersiva.",
+    "whoami": "system@33xl:~# ./ram --execute --verbose",
+    "name_label": "[SYS_ID]:",
+    "system_name": "Repo Access Manager (R.A.M)",
+    "status_label": "[OP_STATUS]:",
+    "status_text": "Kernel de Integração & Distribuidor Global 33XL",
+    "objective_label": "[DIRECTIVE]:",
+    "objective_text": "Orquestrar múltiplos ecossistemas de desenvolvimento — abrangendo microserviços, motores gráficos, simulações interativas e aplicações web — dentro de uma matriz brutalista de altíssima performance e baixa latência.",
+    "stack_title": "Stack & Arquitetura",
+    "p1": "O Projeto R.A.M foi idealizado para resolver um paradoxo arquitetônico complexo: convergir a vasta e fragmentada rede de repositorios da 33XL SYSTEM (projetos acadêmicos, produtos comerciais, códigos experimentais privados e motores customizados) em uma interface unificada, escalável e de acesso instantâneo.",
+    "p2": "Ancorado na identidade visual do brutalismo digital, o sistema rejeita abstrações desnecessárias. Através de tipografia monoespaçada, vetores de alto contraste e arquitetura cyber-industrial, a interface exige foco absoluto, oferecendo uma experiência de navegação crua, imersiva e responsiva.",
+    "p3": "\"Cognoscere Et Creare\" — A 33XL SYSTEM não é apenas uma marca, mas uma entidade lógica distribuida. Construímos ferramentas autônomas e modulares que conversam entre si, movidas pela nossa doutrina implacável: código robusto, segurança assíncrona e design em estado de arte.",
+    "focus": "Módulos da 33XL"
   },
   "contact": {
     "page_title": "Contato",
@@ -137,5 +140,24 @@
     "linkedin": "Conecte-se no LinkedIn",
     "github": "Explore no GitHub",
     "gitlab": "Explore no GitLab"
+  },
+  "playlist": {
+    "title": "PLAYLIST DO R.A.M",
+    "native_folder": "Músicas de Sistema do R.A.M",
+    "imported_folder": "Músicas Importadas",
+    "create_category_placeholder": "Nome da pasta...",
+    "create_category_title": "Criar Pasta",
+    "delete_folder_title": "Excluir Pasta (Músicas irão para Importadas)",
+    "empty_folder": "Pasta Vazia",
+    "upload_audio": "Fazer Upload de Áudio (.mp3, .wav)",
+    "enable_category": "Ativar Pasta",
+    "disable_category": "Desativar Pasta",
+    "move_to_folder": "Mover para Pasta",
+    "delete_track": "Excluir Música",
+    "hide_track": "Ocultar Música (Nativa)",
+    "import_audio": "IMPORTAR ÁUDIO",
+    "full": "LOTADO (33/33)",
+    "tracks_loaded": "Músicas Carregadas",
+    "playing_now": "Tocando Agora"
   }
 }

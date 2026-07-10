@@ -7,6 +7,9 @@ import ContactPage from './pages/ContactPage';
 import { MusicProvider } from './context/MusicContext';
 import { PreviewProvider } from './context/PreviewContext';
 
+import ThreeDMode from './pages/ThreeDMode';
+import Support from './pages/Support';
+
 const App: React.FC = () => {
   return (
     <PreviewProvider>
@@ -15,10 +18,13 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
+              <Route path="3d" element={<ThreeDMode />} />
               <Route path="about" element={<About />} />
               <Route path="contact" element={<ContactPage />} />
+              <Route path="support" element={<Support />} />
             </Route>
           </Routes>
+
         </BrowserRouter>
       </MusicProvider>
     </PreviewProvider>

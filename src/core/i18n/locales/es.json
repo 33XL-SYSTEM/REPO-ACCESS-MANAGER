@@ -14,13 +14,15 @@
     }
   },
   "projects": {
-    "title": "Repositorios Centrales",
+    "title": "Repositorios Core R.A.M",
     "showing": "Mostrando {{count}} instancias filtradas en el sistema",
     "categories": {
       "ALL": "TODOS",
       "33XL SYSTEM": "33XL SYSTEM",
+      "CAUAN33XL": "CAUAN33XL",
       "ACADÊMICOS": "ACADÉMICOS",
       "A.L.T": "A.L.T",
+      "ENGINES": "MOTORES",
       "JOGOS": "JUEGOS",
       "OUTROS PROJETOS": "OTROS PROYECTOS",
       "SITES CLIENTES": "SITIOS DE CLIENTES"
@@ -88,6 +90,7 @@
     "home": "Inicio",
     "about": "Sobre Mí",
     "contact": "Contacto",
+    "support": "Apoyar",
     "back": "Volver"
   },
   "project": {
@@ -116,19 +119,20 @@
     }
   },
   "about": {
-    "title_page": "Sobre",
-    "subtitle_page": "Conoce al arquitecto detrás del código. Desarrollador enfocado en rendimiento, seguridad e interfaces de alto impacto visual.",
-    "whoami": "root@pr-am:~# whoami",
-    "name_label": "> NOMBRE:",
-    "status_label": "> ESTADO:",
-    "status_text": "Estudiante de ADS y Desarrollador de Software Independiente",
-    "objective_label": "> OBJETIVO:",
-    "objective_text": "Construir sistemas escalables que combinan estética inmersiva e ingeniería de software de alto rendimiento.",
-    "stack_title": "Stack Tecnológico",
-    "p1": "Desde la creación de simulaciones de SO en el navegador (Trymon OS) hasta el desarrollo de complejas arquitecturas de comercio electrónico sin servidor y juegos en TypeScript puro, mi enfoque siempre ha estado en la intersección del diseño premium y la lógica robusta.",
-    "p2": "Creo que el software no solo debe ser funcional, sino ofrecer una experiencia visceral. Por eso aplico la estética de la Web Rica, Glassmorphism y conceptos retro-punk en mis centros de desarrollo.",
-    "p3": "\"Cognoscere Et Creare\" - Conocer para poder crear. Este es el mantra que guía mi aprendizaje constante en Ciberseguridad, Arquitectura de Sistemas e Ingeniería Front-end.",
-    "focus": "Enfoque Principal"
+    "title_page": "Sobre R.A.M",
+    "subtitle_page": "El Repo Access Manager (R.A.M) actúa como la neurona central de todo el ecosistema de 33XL SYSTEM. Es una infraestructura escalable, diseñada milimétricamente para indexar, organizar y proporcionar acceso irrestricto a todos nuestros desarrollos, ramas de investigación y motores propietarios de forma inmersiva.",
+    "whoami": "system@33xl:~# ./ram --execute --verbose",
+    "name_label": "[SYS_ID]:",
+    "system_name": "Repo Access Manager (R.A.M)",
+    "status_label": "[OP_STATUS]:",
+    "status_text": "Kernel de Integración & Distribuidor Global 33XL",
+    "objective_label": "[DIRECTIVE]:",
+    "objective_text": "Orquestar múltiples ecosistemas de desarrollo — abarcando microservicios, motores gráficos, simulaciones interactivas y aplicaciones web — dentro de una matriz brutalista de altísimo rendimiento y baja latencia.",
+    "stack_title": "Stack & Arquitectura",
+    "p1": "El Proyecto R.A.M fue concebido para resolver un complejo paradigma arquitectónico: converger la vasta y fragmentada red de repositorios de 33XL SYSTEM (proyectos académicos, productos comerciales, códigos experimentales privados y motores personalizados) en una interfaz unificada, escalable y de acceso instantáneo.",
+    "p2": "Anclado en la identidad visual del brutalismo digital, el sistema rechaza abstracciones innecesarias. A través de tipografía monoespaciada, vectores de alto contraste y arquitectura ciber-industrial, la interfaz exige un enfoque absoluto, ofreciendo una experiencia de navegación cruda, inmersiva y responsiva.",
+    "p3": "\"Cognoscere Et Creare\" — 33XL SYSTEM no es solo una marca, sino una entidad lógica distribuida. Construimos herramientas autónomas y modulares que se comunican entre sí, impulsadas por nuestra doctrina implacable: código robusto, seguridad asíncrona y diseño de vanguardia.",
+    "focus": "Módulos 33XL"
   },
   "contact": {
     "page_title": "Contacto",
@@ -137,5 +141,24 @@
     "linkedin": "Conectar en LinkedIn",
     "github": "Explorar en GitHub",
     "gitlab": "Explorar en GitLab"
+  },
+  "playlist": {
+    "title": "PLAYLIST DE R.A.M",
+    "native_folder": "Pistas del Sistema R.A.M",
+    "imported_folder": "Pistas Importadas",
+    "create_category_placeholder": "Nombre de la carpeta...",
+    "create_category_title": "Crear Carpeta",
+    "delete_folder_title": "Eliminar Carpeta (Las pistas irán a Importadas)",
+    "empty_folder": "Carpeta Vacía",
+    "upload_audio": "Subir Audio Local (.mp3, .wav)",
+    "enable_category": "Activar Carpeta",
+    "disable_category": "Desactivar Carpeta",
+    "move_to_folder": "Mover a Carpeta",
+    "delete_track": "Eliminar Pista",
+    "hide_track": "Ocultar Pista (Nativa)",
+    "import_audio": "IMPORTAR AUDIO",
+    "full": "LLENO (33/33)",
+    "tracks_loaded": "Pistas Cargadas",
+    "playing_now": "Reproduciendo Ahora"
   }
 }

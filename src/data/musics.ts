@@ -2,6 +2,7 @@ export interface MusicTrack {
   id: string;
   title: string;
   url: string;
+  categoryId: string;
 }
 
 // Automatically detect all audio files in the public/musics folder
@@ -25,6 +26,7 @@ export const musics: MusicTrack[] = Object.keys(musicFiles).map((path) => {
     id: filename,
     title,
     url,
+    categoryId: 'native',
   };
 });
 

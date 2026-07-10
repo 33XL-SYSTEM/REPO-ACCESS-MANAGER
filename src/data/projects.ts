@@ -1,8 +1,10 @@
 
 export type ProjectCategory =
   | '33XL SYSTEM'
+  | 'CAUAN33XL'
   | 'ACADÊMICOS'
   | 'A.L.T'
+  | 'ENGINES'
   | 'JOGOS'
   | 'OUTROS PROJETOS'
   | 'SITES CLIENTES';
@@ -15,6 +17,7 @@ export interface Project {
   githubUrl?: string;
   demoUrl?: string;
   isPrivate: boolean;
+  hasMixedVisibility?: boolean;
   category: ProjectCategory;
   status: 'active' | 'archived' | 'in-progress';
   gallery?: string[];
@@ -44,6 +47,17 @@ export const projects: Project[] = [
     status: 'active'
   },
   {
+    id: 'ram-3d-mode',
+    name: 'R.A.M 3D MODE',
+    description: 'Versão em ambiente 3D do Repo Access Manager para uma navegação espacial e imersiva.',
+    tags: ['React 19', 'Three.js', 'React Three Fiber', 'Zustand', 'TypeScript', 'Vite'],
+    githubUrl: 'https://github.com/33XL-SYSTEM/RAM-3D-MODE',
+    demoUrl: 'https://ram-3d-mode.vercel.app/',
+    isPrivate: false,
+    category: '33XL SYSTEM',
+    status: 'active'
+  },
+  {
     id: '33xl-shop',
     name: '33XL SHOP',
     description: 'E-commerce de Afiliados. Vitrine inteligente e ultra-estilizada focada em escalabilidade e design imersivo.',
@@ -58,9 +72,53 @@ export const projects: Project[] = [
     name: '33XL GAMES SYSTEM',
     description: 'Hub central minimalista que abriga os jogos autorais e metafísicos do universo 33XL com integração via Iframe.',
     tags: ['React 18', 'TypeScript', 'Tailwind CSS v4', 'Vite 5'],
+    githubUrl: 'https://github.com/33XL-GAMES-SYSTEM/33XL-GAMES-SYSTEM',
     demoUrl: 'https://33xl-games-system.vercel.app/',
+    isPrivate: false,
+    category: '33XL SYSTEM',
+    status: 'active'
+  },
+  {
+    id: '33xl-work-machine',
+    name: '33XL WORK MACHINE',
+    description: 'IDE Pragmática Funcional de Trabalho e Tarefas.',
+    tags: ['React', 'Zustand', 'React Flow', 'TypeScript'],
+    githubUrl: 'https://github.com/Cauan33XL/33XL-WORK-MACHINE',
+    demoUrl: 'https://33xl-work-machine.vercel.app/',
     isPrivate: true,
     category: '33XL SYSTEM',
+    status: 'active'
+  },
+  {
+    id: '33xl-study-platform',
+    name: '33XL STUDY PLATFORM',
+    description: 'Ambiente de aprendizado imersivo projetado para a nova geração de criadores digitais.',
+    tags: ['React 18', 'TypeScript', 'Vite', 'Three.js', 'Phaser', 'Tailwind CSS'],
+    demoUrl: 'https://33xl-study-platform.vercel.app',
+    isPrivate: true,
+    category: '33XL SYSTEM',
+    status: 'active'
+  },
+  {
+    id: '33xl-support-system',
+    name: '33XL Support System',
+    description: 'Aplicação web SPA desenvolvida para centralizar o apoio financeiro e a comunicação direta.',
+    tags: ['React 19', 'Vite 8', 'TypeScript', 'Tailwind CSS v4'],
+    demoUrl: 'https://33xl-support-system.vercel.app/',
+    isPrivate: true,
+    category: '33XL SYSTEM',
+    status: 'active'
+  },
+
+  // Categoria CAUAN33XL
+  {
+    id: 'cauan33xl-curriculo',
+    name: 'CAUAN33XL',
+    description: 'Currículo & Portfólio Interativo. Uma aplicação web moderna, interativa e altamente performática que reflete a identidade técnica e visual do desenvolvedor.',
+    tags: ['React 18', 'TypeScript', 'Vite', 'TailwindCSS'],
+    demoUrl: 'https://cauan33xl-curriculo-website.vercel.app/',
+    isPrivate: true,
+    category: 'CAUAN33XL',
     status: 'active'
   },
 
@@ -152,6 +210,41 @@ export const projects: Project[] = [
       '/assets/trymon/09.png',
       '/assets/trymon/10.png'
     ]
+  },
+
+  // Categoria ENGINES
+  {
+    id: 'doppelganger-website-engine',
+    name: 'DOPPELGANGER WEBSITE ENGINE',
+    description: 'Engine de criação e modelação de Websites com suporte a HMR, ESLint e tipagem estrita.',
+    tags: ['React', 'TypeScript', 'Vite'],
+    demoUrl: 'https://doppelganger-website-engine.vercel.app/',
+    isPrivate: true,
+    category: 'ENGINES',
+    status: 'active'
+  },
+  {
+    id: 'photo-test-engine',
+    name: 'PHOTO TEST ENGINE',
+    description: 'Um poderoso ecossistema de desenvolvimento focado em criar, visualizar e testar Single Page Applications (SPAs).',
+    tags: ['React 18', 'TypeScript', 'Vite', 'TailwindCSS', 'Sandpack'],
+    githubUrl: 'https://github.com/Cauan33XL/PHOTO-TEST-ENGINE-PUBLIC',
+    demoUrl: 'https://photo-test-engine.vercel.app/',
+    isPrivate: false,
+    hasMixedVisibility: true,
+    category: 'ENGINES',
+    status: 'active'
+  },
+  {
+    id: 'spielron-game-engine',
+    name: 'Spielron Game Engine',
+    description: 'Uma poderosa e flexível engine de desenvolvimento de jogos projetada para rodar tanto localmente quanto na Web.',
+    tags: ['TypeScript', 'Vite', 'React', 'Phaser', 'ThreeJS', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/seu-usuario/spielron-game-engine.git',
+    demoUrl: 'https://spielron-game-engine.vercel.app/',
+    isPrivate: true,
+    category: 'ENGINES',
+    status: 'active'
   },
 
   // CATEGORIA JOGOS
