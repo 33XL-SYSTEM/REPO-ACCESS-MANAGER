@@ -8,7 +8,7 @@
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-> *"Repo Access Manager (R.A.M) acts as the central neuron of the entire 33XL SYSTEM ecosystem. It is a scalable infrastructure, meticulously designed to index, organize, and provide unrestricted access to all our developments, research branches, and proprietary engines in an immersive way."*
+> *"Repo Access Manager (R.A.M) acts as the central neuron of the entire 33XL SYSTEM ecosystem. It is a scalable infrastructure, meticulously designed to index, organize, and provide unrestricted access to all our developments, research branches, and proprietary engines in an immersive way."*.
 
 ---
 
